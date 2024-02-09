@@ -23,11 +23,8 @@
 ## 🛠️ Abre y ejecuta el proyecto
  - npm install 
 
-## Getting Started
-First, run the development server:
-
-```bash
-npm start
+## 🏴 Comenzando
+- npm start
 
 ## Developer
 Realizado por `Cecilia Perdomo`, desde el 09 de Febrero 2024. 
