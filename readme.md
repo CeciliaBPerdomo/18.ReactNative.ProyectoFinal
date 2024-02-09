@@ -16,17 +16,14 @@
 </p>
 
 ## :hammer: Funcionalidades del proyecto
-
-`Funcionalidad`: Se trata de un un e-commerce de venta de libros.
+`Funcionalidad`: Se trata de un un e-commerce de venta de libros, realizado con React Native.
 
 
 ## 🛠️ Abre y ejecuta el proyecto
- - npm install 
+ `Instalación`: npm install 
+ `Ejecución`: npm start
 
-## 🏴 Comenzando
-- npm start
-
-## Developer
+## ⭐ Programadora estrella:
 Realizado por `Cecilia Perdomo`, desde el 09 de Febrero 2024. 
 
 ##
