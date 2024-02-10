@@ -5,8 +5,8 @@ const Header = ({ title, sub }) => {
     return (
         <View style={styles.container}>
             <Image
-                // Logo
-                source={{ uri: "https://i.ibb.co/PG0SdYJ/Mis-Libritos.png" }}
+                // Logo 
+                source={{ uri: "https://i.ibb.co/zXNHTsp/Logo.png" }}
                 style={styles.imagen}
                 resizeMode="cover"
             />

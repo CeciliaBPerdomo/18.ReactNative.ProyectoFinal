@@ -1,18 +1,38 @@
 [
     {
         "id": 0,
-        "title": "",
-        "description": "",
-        "price": "",
-        "stock": "",
-        "category": "",
-        "image": ""
+        "title": "Los tres mosqueteros",
+        "author": "Alexandre Dumas",
+        "price": "790",
+        "stock": "100",
+        "category": "Aventura",
+        "image": "https://i.ibb.co/s2R37ZN/image.jpg"
     }, 
+
+    {
+        "id": 1,
+        "title": "Robin Crusoe",
+        "author": "Daniel Defoe",
+        "price": "790",
+        "stock": "100",
+        "category": "Aventura",
+        "image": "https://i.ibb.co/k4pxwJv/1.jpg"
+    },
+
+    {
+        "id": 2,
+        "title": "El último Mohicano",
+        "author": "James Fenimore Cooper",
+        "price": "590",
+        "stock": "100",
+        "category": "Aventura",
+        "image": "https://i.ibb.co/Rj1D8Kz/2.jpg"
+    },
 
     {
         "id": 0,
         "title": "",
-        "description": "",
+        "author": "",
         "price": "",
         "stock": "",
         "category": "",

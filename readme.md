@@ -20,10 +20,10 @@
 
 
 ## 🛠️ Abre y ejecuta el proyecto
- `Instalación`: npm install 
- `Ejecución`: npm start
+- `Instalación`: npm install 
+- `Ejecución`: npm start
 
-## ⭐ Programadora estrella:
+## ⭐ Programadora estrella
 Realizado por `Cecilia Perdomo`, desde el 09 de Febrero 2024. 
 
 ##
