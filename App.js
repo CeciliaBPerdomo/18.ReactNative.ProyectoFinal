@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './src/screens/Home';
 import { useState, useEffect } from 'react';
+import Books from './src/screens/Books';
 
 export default function App() {
   const [categorySelected, setCategorySelected] = useState("")
@@ -15,7 +16,10 @@ export default function App() {
 
   return (
     <View>
-      <Home selectedCategoryState={selectedCategoryState} />
+      {categorySelected ?
+        <Books categorySelected={categorySelected} /> :
+        <Home selectedCategoryState={selectedCategoryState} />
+      }
     </View>
   );
 }
