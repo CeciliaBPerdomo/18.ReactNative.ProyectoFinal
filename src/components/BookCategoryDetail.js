@@ -6,16 +6,19 @@ import { Image } from 'react-native'
 const BookCategoryDetail = ({ item }) => {
     return (
         <View style={styles.container}>
+
             <Image
                 source={{ uri: item.image }}
                 style={styles.imagen}
                 resizeMode="cover"
             />
+
             <View>
                 <Text style={styles.texto}>{item.title}</Text>
                 <Text style={styles.textoAutor}>{item.author}</Text>
                 <Text style={styles.textoPrecio}>$ {item.price}</Text>            
             </View>
+
         </View>
     )
 }
@@ -45,6 +48,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: "bold"
     }, 
+    
     textoAutor: {
 
     }, 

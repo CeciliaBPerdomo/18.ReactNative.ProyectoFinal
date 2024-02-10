@@ -22,11 +22,141 @@
     {
         "id": 2,
         "title": "El último Mohicano",
-        "author": "James Fenimore Cooper",
+        "author": "James F. Cooper",
         "price": "590",
         "stock": "100",
         "category": "Aventura",
         "image": "https://i.ibb.co/Rj1D8Kz/2.jpg"
+    },
+
+    {
+        "id": 3,
+        "title": "La vuelta al mundo",
+        "author": "Julio Verne",
+        "price": "690",
+        "stock": "100",
+        "category": "Aventura",
+        "image": "https://i.ibb.co/smKC64b/4.jpg"
+    }, 
+    
+    {
+        "id": 4,
+        "title": "El caballero armadura",
+        "author": "Robert Fisher",
+        "price": "590",
+        "stock": "100",
+        "category": "Ciencia ficción",
+        "image": "https://i.ibb.co/17CVhYq/1.jpg"
+    }, 
+
+    {
+        "id": 5,
+        "title": "El marciano",
+        "author": "Andy Weir",
+        "price": "490",
+        "stock": "100",
+        "category": "Ciencia ficción",
+        "image": "https://i.ibb.co/MgjfQK0/2.jpg"
+    }, 
+
+    {
+        "id": 6,
+        "title": "Soy Leyenda",
+        "author": "Richard Matheson",
+        "price": "899",
+        "stock": "100",
+        "category": "Ciencia ficción",
+        "image": "https://i.ibb.co/K0y5wVW/3.jpg"
+    },
+
+    {
+        "id": 7,
+        "title": "Cronicas marcianas",
+        "author": "Ray Bradbury",
+        "price": "299",
+        "stock": "100",
+        "category": "Ciencia ficción",
+        "image": "https://i.ibb.co/zNyfsB1/4.jpg"
+    }, 
+
+    {
+        "id": 8,
+        "title": "Tus zonas erróneas",
+        "author": "Wayne W. Dyer",
+        "price": "679",
+        "stock": "100",
+        "category": "Crecimiento personal",
+        "image": "https://i.ibb.co/6g2qtN8/1.jpg"
+    },
+
+    {
+        "id": 9,
+        "title": "Sé amable contigo",
+        "author": "Kristin Neff",
+        "price": "877",
+        "stock": "100",
+        "category": "Crecimiento personal",
+        "image": "https://i.ibb.co/vVhJYn5/2.jpg"
+    },
+
+    {
+        "id": 10,
+        "title": "Despierta",
+        "author": "Anthony de Mello",
+        "price": "399",
+        "stock": "100",
+        "category": "Crecimiento personal",
+        "image": "https://i.ibb.co/LS5PDz0/3.jpg"
+    },
+
+    {
+        "id": 11,
+        "title": "Me quiero",
+        "author": "María Esclapez",
+        "price": "499",
+        "stock": "100",
+        "category": "Crecimiento personal",
+        "image": "https://i.ibb.co/MZxW4V5/4.png"
+    },
+
+    {
+        "id": 12,
+        "title": "Mujeres en el deporte",
+        "author": "Rachel Ignotofsky",
+        "price": "499",
+        "stock": "100",
+        "category": "Deportes",
+        "image": "https://i.ibb.co/N9xBp9y/1.jpg"
+    },
+
+    {
+        "id": 13,
+        "title": "Deporte y sociedad",
+        "author": "Juan González",
+        "price": "599",
+        "stock": "100",
+        "category": "Deportes",
+        "image": "https://i.ibb.co/Wn1PTvg/2.png"
+    },
+
+    {
+        "id": 14,
+        "title": "Uruguay en mundiales",
+        "author": "Gerardo Caetano",
+        "price": "1051",
+        "stock": "100",
+        "category": "Deportes",
+        "image": "https://i.ibb.co/6bmcCx4/3.jpg"
+    },
+
+    {
+        "id": 15,
+        "title": "Cerrado por fútbol",
+        "author": "Eduardo Galeano",
+        "price": "569",
+        "stock": "100",
+        "category": "Deportes",
+        "image": "https://i.ibb.co/ch31c3M/4.jpg"
     },
 
     {
