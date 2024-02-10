@@ -1,11 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './src/screens/Home';
+import { useState, useEffect } from 'react';
 
 export default function App() {
+  const [categorySelected, setCategorySelected] = useState("")
+
+  const selectedCategoryState = (category) => {
+    setCategorySelected(category)
+  }
+
+  useEffect(() => { //Muestra la categoria seleccionada
+    console.log(categorySelected)
+  }, [categorySelected])
+
   return (
     <View>
-      <Home />
+      <Home selectedCategoryState={selectedCategoryState} />
     </View>
   );
 }
