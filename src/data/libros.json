@@ -200,11 +200,91 @@
     },
 
     {
+        "id": 20,
+        "title": "Salud pura",
+        "author": "Irinia Matveikova",
+        "price": "239",
+        "stock": "100",
+        "category": "Salud",
+        "image": "https://i.ibb.co/S0shS6y/1.jpg"
+    },
+
+    {
+        "id": 21,
+        "title": "Comer saludable",
+        "author": "L. Jimenéz",
+        "price": "849",
+        "stock": "100",
+        "category": "Salud",
+        "image": "https://i.ibb.co/4g5xRrr/2.jpg"
+    },
+
+    {
+        "id": 22,
+        "title": "Come vegano",
+        "author": "Neal D. Barnard",
+        "price": "756",
+        "stock": "100",
+        "category": "Salud",
+        "image": "https://i.ibb.co/BVMS9pH/4.jpg"
+    },
+
+    {
+        "id": 23,
+        "title": "Cocina sana",
+        "author": "Emma Miller",
+        "price": "239",
+        "stock": "100",
+        "category": "Salud",
+        "image": "https://i.ibb.co/XSyPJKp/3.jpg"
+    },
+
+    {
+        "id": 24,
+        "title": "Huerfana robada",
+        "author": "Stacey Halls",
+        "price": "599",
+        "stock": "100",
+        "category": "Novela histórica",
+        "image": "https://i.ibb.co/DD5mJwP/1.jpg"
+    },
+
+    {
+        "id": 25,
+        "title": "El cirujano de almas",
+        "author": "Luis Zueco",
+        "price": "539",
+        "stock": "100",
+        "category": "Novela histórica",
+        "image": "https://i.ibb.co/r5jJX0z/2.jpg"
+    },
+
+    {
+        "id": 26,
+        "title": "El médico",
+        "author": "Noah Gordon",
+        "price": "399",
+        "stock": "100",
+        "category": "Novela histórica",
+        "image": "https://i.ibb.co/R2QQfRr/4.jpg"
+    },
+
+    {
+        "id": 27,
+        "title": "La leyenda del ladrón",
+        "author": "Juan Gómez Jurado",
+        "price": "699",
+        "stock": "100",
+        "category": "Novela histórica",
+        "image": "https://i.ibb.co/wKk15Sy/3.jpg"
+    },
+
+    {
         "id": 0,
         "title": "",
         "author": "",
         "price": "",
-        "stock": "",
+        "stock": "100",
         "category": "",
         "image": ""
     }
