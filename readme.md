@@ -22,7 +22,8 @@
 ## 🛠️ Abre y ejecuta el proyecto
 - `Instalación`: 
     - npm install 
-    - npm install expo/vector-icons
+    - npm install expo/vector-icons (Doc: https://oblador.github.io/react-native-vector-icons/)
+    - npm install expo-font (Doc: https://docs.expo.dev/versions/latest/sdk/font/)
 
 - `Ejecución`: npm start
 
