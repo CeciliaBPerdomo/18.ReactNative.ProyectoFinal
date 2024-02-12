@@ -280,6 +280,137 @@
     },
 
     {
+        "id": 28,
+        "title": "Punto ciego",
+        "author": "Paula Hawkings",
+        "price": "899",
+        "stock": "100",
+        "category": "Novela",
+        "image": "https://i.ibb.co/X4TqBgL/1.jpg"
+    },
+
+    {
+        "id": 29,
+        "title": "Como fuego en el hielo",
+        "author": "Luz Gabas",
+        "price": "899",
+        "stock": "100",
+        "category": "Novela",
+        "image": "https://i.ibb.co/mRtVTxJ/2.jpg"
+    },
+
+    {
+        "id": 30,
+        "title": "El cuco de cristal",
+        "author": "Javier Castillo",
+        "price": "399",
+        "stock": "100",
+        "category": "Novela",
+        "image": "https://i.ibb.co/qsMLDqT/3.jpg"
+    },
+
+    {
+        "id": 31,
+        "title": "El cielo sobre Darjeeling",
+        "author": "Nicole Vosseler",
+        "price": "399",
+        "stock": "100",
+        "category": "Novela",
+        "image": "https://i.ibb.co/4KLkTHb/4.jpg"
+    },
+
+    {
+        "id": 32,
+        "title": "La hora de las gaviotas",
+        "author": "Ibon Martin",
+        "price": "950",
+        "stock": "100",
+        "category": "Novela negra",
+        "image": "https://i.ibb.co/pfNMjNN/2.jpg"
+    },
+
+    {
+        "id": 33,
+        "title": "El buen padre",
+        "author": "Santiago Díaz",
+        "price": "759",
+        "stock": "100",
+        "category": "Novela negra",
+        "image": "https://i.ibb.co/PFgH0sD/3.jpg"
+    },
+
+    {
+        "id": 34,
+        "title": "Los asesinatos",
+        "author": "Agatha Cristhie",
+        "price": "1059",
+        "stock": "100",
+        "category": "Novela negra",
+        "image": "https://i.ibb.co/qNFSjDC/4.jpg"
+    },
+
+    {
+        "id": 35,
+        "title": "Tres",
+        "author": "Dror Mishani",
+        "price": "499",
+        "stock": "100",
+        "category": "Novela negra",
+        "image": "https://i.ibb.co/gjCf4bF/5.jpg"
+    },
+
+    {
+        "id": 36,
+        "title": "La hipótesis del amor",
+        "author": "Ali Hazelwood",
+        "price": "899",
+        "stock": "100",
+        "image": "https://i.ibb.co/ssGdrtp/1.jpg",
+        "category": "Novela romantíca"
+    },
+
+    {
+        "id": 40,
+        "title": "El mapa de los anhelos",
+        "author": "Alice Kellen",
+        "price": "799",
+        "stock": "100",
+        "image": "https://i.ibb.co/cDy7Tzn/2.jpg",
+        "category": "Novela romantíca"
+    },
+
+    {
+        "id": 37,
+        "title": "El faro",
+        "author": "Andrea Longarela",
+        "price": "899",
+        "stock": "100",
+        "image": "https://i.ibb.co/0Qc8gXb/4.jpg",
+        "category": "Novela romantíca"
+    },
+
+
+    {
+        "id": 38,
+        "title": "Indias blancas",
+        "author": "Florencia Bonelli",
+        "price": "1041",
+        "stock": "100",
+        "image": "https://i.ibb.co/rFHmdPR/3.jpg",
+        "category": "Novela romantíca"
+    },
+
+    {
+        "id": 39,
+        "title": "Todo el azul del cielo",
+        "author": "Melissa Acosta",
+        "price": "499",
+        "stock": "100",
+        "image": "https://i.ibb.co/f8mfyQn/5.jpg",
+        "category": "Novela romantíca"
+    },
+
+    {
         "id": 0,
         "title": "",
         "author": "",

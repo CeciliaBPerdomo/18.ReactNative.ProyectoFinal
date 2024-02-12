@@ -10,11 +10,6 @@ export default function App() {
     setCategorySelected(category)
   }
 
-
-  // useEffect(() => { //Muestra la categoria seleccionada
-  //   console.log(categorySelected)
-  // }, [categorySelected])
-
   return (
     <View>
       {categorySelected ?
