@@ -6,7 +6,7 @@ import colors from '../../utils/colors'
 const BackHome = ({selectedCategoryState}) => {
 
     const backHome = () => {
-        try{
+        try {
             selectedCategoryState("")
         } catch (error){ 
             console.log(error)

@@ -160,6 +160,46 @@
     },
 
     {
+        "id": 16,
+        "title": "Sira",
+        "author": "María Dueñas",
+        "price": "599",
+        "stock": "100",
+        "category": "Guerra",
+        "image": "https://i.ibb.co/jVBZ786/1.jpg"
+    },
+
+    {
+        "id": 17,
+        "title": "Las tinieblas",
+        "author": "Ken Follet",
+        "price": "899",
+        "stock": "100",
+        "category": "Guerra",
+        "image": "https://i.ibb.co/60BH4gT/2.jpg"
+    },
+
+    {
+        "id": 18,
+        "title": "Diario",
+        "author": "Anne Frank",
+        "price": "299",
+        "stock": "100",
+        "category": "Guerra",
+        "image": "https://i.ibb.co/1nP6dk0/3.jpg"
+    },
+
+    {
+        "id": 19,
+        "title": "El niño",
+        "author": "John Boyne",
+        "price": "199",
+        "stock": "100",
+        "category": "Guerra",
+        "image": "https://i.ibb.co/zs7Z02r/4.jpg"
+    },
+
+    {
         "id": 0,
         "title": "",
         "author": "",
