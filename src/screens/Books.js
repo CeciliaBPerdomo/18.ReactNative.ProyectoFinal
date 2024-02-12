@@ -1,23 +1,50 @@
 import { FlatList, StyleSheet, View } from 'react-native'
-import Header from '../components/Header'
 import { useEffect, useState } from 'react'
+
 import libros from "../data/libros.json"
+
+import Header from '../components/Header'
 import BookCategoryDetail from '../components/BookCategoryDetail'
+import SearchBar from '../components/wrappers/SearchBar'
+import BackHome from '../components/wrappers/BackHome'
+
 
 const Books = ({ categorySelected }) => {
   const [booksFiltered, setBooksFiltered] = useState([])
+  const [keyWord, setKeyWord] = useState("")
+
 
   useEffect(() => {
+
     if (categorySelected) {
       setBooksFiltered(libros.filter(libro => libro.category === categorySelected))
     }
-  }, [categorySelected])
+
+    if (keyWord) {
+      setBooksFiltered(booksFiltered.filter(libro =>  {
+        const titulo = libro.title.toLowerCase()
+        const palabraClave = keyWord.toLowerCase()
+        return titulo.includes(palabraClave)
+      }))
+    }
+
+  }, [categorySelected, keyWord])
+
+  const handlerKeyWord = (k) => {
+    setKeyWord(k)
+  }
 
   return (
     <View>
+
       <Header title={categorySelected || "Bienvenid@s"}
         sub={"Todo lo que querés leer sobre: " + (categorySelected.toLowerCase()) + "."}
       />
+
+      <BackHome />
+
+      <SearchBar handlerKeyWord={handlerKeyWord} />
+
       <FlatList 
       data={booksFiltered}
       key={item => item.id}
@@ -25,6 +52,7 @@ const Books = ({ categorySelected }) => {
         <BookCategoryDetail item={item}/>
       }
       />
+
     </View>
   )
 }

@@ -16,11 +16,14 @@
 </p>
 
 ## :hammer: Funcionalidades del proyecto
-`Funcionalidad`: Se trata de un un e-commerce de venta de libros, realizado con React Native.
+`Funcionalidad`: Se trata de un un e-commerce de venta de libros, realizado como proyecto para CoderHouse y realizado con React Native y con 💛.
 
 
 ## 🛠️ Abre y ejecuta el proyecto
-- `Instalación`: npm install 
+- `Instalación`: 
+    - npm install 
+    - npm install expo/vector-icons
+
 - `Ejecución`: npm start
 
 ## ⭐ Programadora estrella
