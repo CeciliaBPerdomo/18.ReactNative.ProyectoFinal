@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './src/screens/Home';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Books from './src/screens/Books';
 
 export default function App() {
@@ -10,14 +10,15 @@ export default function App() {
     setCategorySelected(category)
   }
 
-  useEffect(() => { //Muestra la categoria seleccionada
-    console.log(categorySelected)
-  }, [categorySelected])
+
+  // useEffect(() => { //Muestra la categoria seleccionada
+  //   console.log(categorySelected)
+  // }, [categorySelected])
 
   return (
     <View>
       {categorySelected ?
-        <Books categorySelected={categorySelected} /> :
+        <Books categorySelected={categorySelected} selectedCategoryState={selectedCategoryState} /> :
         <Home selectedCategoryState={selectedCategoryState} />
       }
     </View>

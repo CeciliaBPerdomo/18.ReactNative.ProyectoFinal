@@ -9,7 +9,7 @@ import SearchBar from '../components/wrappers/SearchBar'
 import BackHome from '../components/wrappers/BackHome'
 
 
-const Books = ({ categorySelected }) => {
+const Books = ({ categorySelected, selectedCategoryState }) => {
   const [booksFiltered, setBooksFiltered] = useState([])
   const [keyWord, setKeyWord] = useState("")
 
@@ -21,7 +21,7 @@ const Books = ({ categorySelected }) => {
     }
 
     if (keyWord) {
-      setBooksFiltered(booksFiltered.filter(libro =>  {
+      setBooksFiltered(booksFiltered.filter(libro => {
         const titulo = libro.title.toLowerCase()
         const palabraClave = keyWord.toLowerCase()
         return titulo.includes(palabraClave)
@@ -34,6 +34,7 @@ const Books = ({ categorySelected }) => {
     setKeyWord(k)
   }
 
+
   return (
     <View>
 
@@ -41,16 +42,16 @@ const Books = ({ categorySelected }) => {
         sub={"Todo lo que querés leer sobre: " + (categorySelected.toLowerCase()) + "."}
       />
 
-      <BackHome />
+      <BackHome selectedCategoryState={selectedCategoryState}/>
 
       <SearchBar handlerKeyWord={handlerKeyWord} />
 
-      <FlatList 
-      data={booksFiltered}
-      key={item => item.id}
-      renderItem={({item}) => 
-        <BookCategoryDetail item={item}/>
-      }
+      <FlatList
+        data={booksFiltered}
+        key={item => item.id}
+        renderItem={({ item }) =>
+          <BookCategoryDetail item={item} />
+        }
       />
 
     </View>

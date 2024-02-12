@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignContent: "center",
         alignItems: "center",
-        paddingVertical: 40,
-        // backgroundColor: "black"
+        marginTop: 20,
+        paddingVertical: 10,
     },
 
     texto: {
