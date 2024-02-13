@@ -3,7 +3,7 @@ export const fontCollection = {
 }
 
 const fonts = {
-    Playfair: "PlayfairDisplay-VariableFont_wght"
+    Playfair: "Playfair"
 }
 
 export default fonts

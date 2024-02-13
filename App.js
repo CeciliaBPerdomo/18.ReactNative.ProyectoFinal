@@ -9,11 +9,11 @@ import { fontCollection } from './src/utils/fonts';
 
 export default function App() {
   const [categorySelected, setCategorySelected] = useState("")
-  const [ fontsLoaded ] = useFonts({fontCollection})
+  const [ fontsLoaded ] = useFonts(fontCollection)
 
-  // if (!fontsLoaded) {
-  //   return null
-  // }
+  if (!fontsLoaded) {
+    return null
+  }
   
   const selectedCategoryState = (category) => {
     setCategorySelected(category)

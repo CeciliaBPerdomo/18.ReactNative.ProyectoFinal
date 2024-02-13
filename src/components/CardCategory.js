@@ -35,6 +35,6 @@ const styles = StyleSheet.create({
 
     texto : {
         fontSize: 16,
-        // fontFamily: fonts.Playfair
+        fontFamily: fonts.Playfair
     }
 })
