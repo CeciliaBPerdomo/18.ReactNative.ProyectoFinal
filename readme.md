@@ -16,16 +16,32 @@
 </p>
 
 ## :hammer: Funcionalidades del proyecto
-`Funcionalidad`: Se trata de un un e-commerce de venta de libros, realizado como proyecto para CoderHouse y realizado con React Native y con 💛.
+`Funcionalidad`: Se trata de un e-commerce de venta de libros, realizado como proyecto para CoderHouse y realizado con React Native y con 💛.
 
 
 ## 🛠️ Abre y ejecuta el proyecto
-- `Instalación`: 
-    - npm install 
-    - npm install expo/vector-icons (Doc: https://oblador.github.io/react-native-vector-icons/)
-    - npm install expo-font (Doc: https://docs.expo.dev/versions/latest/sdk/font/)
-
 - `Ejecución`: npm start
+
+## Instalaciones: 
+- npm install 
+    
+- `Expo Fonts & Iconos`: 
+    - npm install expo/vector-icons
+    - npm install expo-font
+
+- `Navegación`: 
+    - npm install @react-navigation/native
+    - npm install react-native-screens 
+    - npm install react-native-safe-area-context
+    - npm install @react-navigation/native-stack
+ 
+
+## Información útil
+- https://dummyjson.com/#google_vignette
+- https://color.adobe.com/es/create/color-wheel
+- https://oblador.github.io/react-native-vector-icons/
+- https://reactnavigation.org/docs/getting-started
+- https://docs.expo.dev/versions/latest/sdk/font/
 
 ## ⭐ Programadora estrella
 Realizado por `Cecilia Perdomo`, desde el 09 de Febrero 2024. 
