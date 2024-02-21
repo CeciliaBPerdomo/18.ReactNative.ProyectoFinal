@@ -7,7 +7,7 @@ const BookCategoryDetail = ({ item, navigation }) => {
     return (
         <View>
             <Pressable 
-                onPress={() => navigation.navigate("BooksDetail", {productId: item.id})}
+                onPress={() => navigation.navigate("BooksDetail", {libroId: item.id})}
                 style={styles.container}
             >
 

@@ -23,7 +23,7 @@ const Header = ({ title, sub, navigation }) => {
 
             {navigation.canGoBack() &&
                 <Pressable onPress={() => navigation.goBack()}>
-                    <Entypo name="home" size={25} color="black" />
+                    <Entypo name="chevron-with-circle-left" size={25} color={colors.botones} />
                 </Pressable>
             }
         </View>
