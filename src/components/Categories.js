@@ -1,22 +1,26 @@
-import { StyleSheet, View, FlatList } from 'react-native'
+import { View, FlatList } from 'react-native'
+
 import categoria from "../data/categoria.json"
 import CardCategory from './CardCategory'
 
-const Categories = ({selectedCategoryState}) => {
+const Categories = ({ navigation }) => {
   return (
     <View>
-      <FlatList 
+
+      <FlatList
         data={categoria}
         key={item => item}
-        renderItem={({item}) => (
-            <CardCategory item={item} selectedCategoryState={selectedCategoryState} />
+        renderItem={({ item }) => (
+
+          <CardCategory
+            item={item}
+            navigation={navigation}
+          />
         )}
       />
+
     </View>
   )
 }
 
 export default Categories
-
-const styles = StyleSheet.create({
-})

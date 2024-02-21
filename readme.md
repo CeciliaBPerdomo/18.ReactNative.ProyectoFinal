@@ -22,7 +22,7 @@
 ## 🛠️ Abre y ejecuta el proyecto
 - `Ejecución`: npm start
 
-## Instalaciones: 
+## 📦 Instalaciones: 
 - npm install 
     
 - `Expo Fonts & Iconos`: 
@@ -36,7 +36,7 @@
     - npm install @react-navigation/native-stack
  
 
-## Información útil
+## 📒 Información útil
 - https://dummyjson.com/#google_vignette
 - https://color.adobe.com/es/create/color-wheel
 - https://oblador.github.io/react-native-vector-icons/

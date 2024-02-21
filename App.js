@@ -1,39 +1,31 @@
-import { StyleSheet, View } from 'react-native';
-import { useState } from 'react';
-
-import Home from './src/screens/Home';
-import Books from './src/screens/Books';
-
+import { StatusBar } from 'react-native';
 import { useFonts } from "expo-font"
 import { fontCollection } from './src/utils/fonts';
 
-export default function App() {
-  const [categorySelected, setCategorySelected] = useState("")
-  const [ fontsLoaded ] = useFonts(fontCollection)
+// Navegacion
+import MainNavigation from './src/navigation/MainNavigation';
+import colors from './src/utils/colors';
+
+const App = () => {
+  // Fuente de las letras
+  const [fontsLoaded] = useFonts(fontCollection)
 
   if (!fontsLoaded) {
     return null
   }
-  
-  const selectedCategoryState = (category) => {
-    setCategorySelected(category)
-  }
 
   return (
-    <View>
-      {categorySelected ?
-        <Books categorySelected={categorySelected} selectedCategoryState={selectedCategoryState} /> :
-        <Home selectedCategoryState={selectedCategoryState} />
-      }
-    </View>
+    <>
+      {/* Barra de estado */}
+      <StatusBar
+        backgroundColor={colors.bordes}
+        barStyle={"dark-content"}
+      />
+
+      {/* Navegacion */}
+      <MainNavigation />
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App

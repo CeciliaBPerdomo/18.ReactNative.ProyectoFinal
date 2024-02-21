@@ -5,10 +5,10 @@ import Shadows from './wrappers/shadows'
 import colors from '../utils/colors'
 import fonts from '../utils/fonts'
 
-const CardCategory = ({ item, selectedCategoryState }) => {
+const CardCategory = ({ item, navigation }) => {
     return (
         <View >
-            <Pressable onPress={() => selectedCategoryState(item)}>
+            <Pressable onPress={() => navigation.navigate("Books", {categorySelected: item})}>
                 <Shadows style={styles.container}>
                     <Text style={styles.texto}>
                         {item}

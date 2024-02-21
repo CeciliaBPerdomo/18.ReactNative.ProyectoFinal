@@ -1,7 +1,10 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
 import colors from '../utils/colors'
 
-const Header = ({ title, sub }) => {
+// Iconos
+import { Entypo } from "@expo/vector-icons"
+
+const Header = ({ title, sub, navigation }) => {
     return (
         <View style={styles.container}>
             <Image
@@ -17,6 +20,12 @@ const Header = ({ title, sub }) => {
             <Text style={styles.subTitulo}>
                 {sub}
             </Text>
+
+            {navigation.canGoBack() &&
+                <Pressable onPress={() => navigation.goBack()}>
+                    <Entypo name="home" size={25} color="black" />
+                </Pressable>
+            }
         </View>
     )
 }
