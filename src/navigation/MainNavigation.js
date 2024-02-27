@@ -7,12 +7,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import BookStack from './BookStack';
-import CartBooks from '../components/CartBooks';
+import CartBooks from '../components/cart/CartBooks';
 import BookOrders from '../components/BookOrders';
 
 import TabBarIcon from '../components/TabBarIcon';
 import CartStack from './CartStack';
 import OrdersStack from './OrdersStack';
+import colors from '../utils/colors';
 
 const Tab = createBottomTabNavigator();
 
@@ -71,4 +72,12 @@ const MainNavigation = () => {
 
 export default MainNavigation
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    tabBar: {
+        height: 80,
+        shadowColor: "black",
+        position: "absolute",
+        elevation: 4,
+        backgroundColor: colors.iconos
+    }
+})

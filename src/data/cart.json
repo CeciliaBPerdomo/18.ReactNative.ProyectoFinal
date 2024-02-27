@@ -1,0 +1,25 @@
+{
+    "total": 1748,
+    "items": [
+        {
+            "id": 17,
+            "quantity": 1,
+            "title": "Las tinieblas",
+            "author": "Ken Follet",
+            "price": "899",
+            "stock": "100",
+            "category": "Guerra",
+            "image": "https://i.ibb.co/60BH4gT/2.jpg"
+        }, 
+        {
+            "id": 21,
+            "quantity": 1,
+            "title": "Comer saludable",
+            "author": "L. Jimenéz",
+            "price": "849",
+            "stock": "100",
+            "category": "Salud",
+            "image": "https://i.ibb.co/4g5xRrr/2.jpg"
+        }
+    ]
+}

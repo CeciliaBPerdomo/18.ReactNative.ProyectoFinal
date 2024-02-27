@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import CartBook from "../components/CartBooks"
+
+import CartBook from "../screens/CartBooks.js"
 
 // Encabezado 
 import Header from '../components/Header';
@@ -24,7 +25,7 @@ const CartStack = () => {
             }}
         >
              <Stack.Screen
-                name="Cart"
+                name="Carrito"
                 component={CartBook}
             />
         </Stack.Navigator>
