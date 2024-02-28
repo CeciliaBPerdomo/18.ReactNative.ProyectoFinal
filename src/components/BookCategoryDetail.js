@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         borderRadius: 10,
         gap: 20,
-        flexDirection: "row",
+        flexDirection: "row"
     },
 
     imagen: {

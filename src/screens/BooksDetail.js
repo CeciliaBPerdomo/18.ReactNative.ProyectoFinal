@@ -4,7 +4,13 @@ import { useEffect, useState } from 'react'
 import libros from "../data/libros.json"
 import colors from '../utils/colors'
 
+// Redux
+import { useDispatch } from 'react-redux'
+import { addCartItem } from "../features/cart/cartSlice"
+
+
 const BooksDetail = ({ route }) => {
+  const dispatch = useDispatch()
   const { libroId } = route.params
   const [book, setBook] = useState({})
 
@@ -27,7 +33,7 @@ const BooksDetail = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>{book.title}</Text>
+      <Text style={styles.titulo}>{book.title} - {book.author}</Text>
 
       <View style={[styles.content,
       // si esta acostado
@@ -44,17 +50,15 @@ const BooksDetail = ({ route }) => {
 
       </View>
 
-      <Text style={styles.titulo}>{book.author}</Text>
-
       <View style={[
         styles.priceContainer,
         !portait && styles.priceContainerPortait
         ]}>
         <Text style={styles.price}>$ {book.price}</Text>
 
-        <Pressable style={styles.buyNowBotton}>
+        <Pressable style={styles.buyNowBotton} onPress={()=> dispatch(addCartItem(book))}>
           <Text style={styles.textBuy}>
-            Comprar
+            Agregar al carrito
           </Text>
         </Pressable>
       </View>
@@ -70,6 +74,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#FFF",
+    marginBottom: 80,
     flex: 1
   },
 
@@ -80,7 +85,7 @@ const styles = StyleSheet.create({
   },
 
   titulo: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: "bold",
     paddingBottom: 15,
     paddingTop: 10,
@@ -92,7 +97,7 @@ const styles = StyleSheet.create({
 
   imagen: {
     width: 350,
-    height: 280,
+    height: 240,
     borderRadius: 5,
   },
 
@@ -106,7 +111,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    marginVertical: 10
+    marginVertical: 18,
+    backgroundColor: "#FFF",
   },
 
   priceContainerPortait: {

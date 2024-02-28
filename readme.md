@@ -34,14 +34,17 @@
     - npm install react-native-screens 
     - npm install react-native-safe-area-context
     - npm install @react-navigation/native-stack
- 
+
+- `Redux`: 
+    - npm install @reduxjs/toolkit react-redux
 
 ## 📒 Información útil
-- https://dummyjson.com/#google_vignette
-- https://color.adobe.com/es/create/color-wheel
-- https://oblador.github.io/react-native-vector-icons/
-- https://reactnavigation.org/docs/getting-started
-- https://docs.expo.dev/versions/latest/sdk/font/
+- Jsons: https://dummyjson.com/#google_vignette
+- Colores: https://color.adobe.com/es/create/color-wheel
+- Iconos: https://oblador.github.io/react-native-vector-icons/
+- Navegación: https://reactnavigation.org/docs/getting-started
+- Expo: https://docs.expo.dev/versions/latest/sdk/font/
+- Redux: https://redux-toolkit.js.org/tutorials/quick-start
 
 ## ⭐ Programadora estrella
 Realizado por `Cecilia Perdomo`, desde el 09 de Febrero 2024. 

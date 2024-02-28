@@ -1,10 +1,15 @@
 import { StatusBar } from 'react-native';
 import { useFonts } from "expo-font"
 import { fontCollection } from './src/utils/fonts';
+import colors from './src/utils/colors';
 
 // Navegacion
 import MainNavigation from './src/navigation/MainNavigation';
-import colors from './src/utils/colors';
+
+// Redux
+import { store } from "./src/app/store"
+import { Provider } from 'react-redux'
+
 
 const App = () => {
   // Fuente de las letras
@@ -22,8 +27,10 @@ const App = () => {
         barStyle={"dark-content"}
       />
 
-      {/* Navegacion */}
-      <MainNavigation />
+      <Provider store={store}>
+        {/* Navegacion */}
+        <MainNavigation />
+      </Provider>
     </>
   );
 }

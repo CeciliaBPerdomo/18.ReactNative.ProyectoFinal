@@ -1,4 +1,4 @@
-import { FlatList, View } from 'react-native'
+import { FlatList, View, StyleSheet } from 'react-native'
 import { useEffect, useState } from 'react'
 
 import libros from "../data/libros.json"
@@ -37,7 +37,7 @@ const Books = ({ route, navigation }) => {
 
 
   return (
-    <View>
+    <View style={styles.container}>
       <SearchBar handlerKeyWord={handlerKeyWord} />
 
       <FlatList
@@ -56,3 +56,9 @@ const Books = ({ route, navigation }) => {
 }
 
 export default Books
+
+const styles = StyleSheet.create({
+  container: {
+      marginBottom: 160
+  }
+})
