@@ -45,6 +45,7 @@
 - Navegación: https://reactnavigation.org/docs/getting-started
 - Expo: https://docs.expo.dev/versions/latest/sdk/font/
 - Redux: https://redux-toolkit.js.org/tutorials/quick-start
+- Redux Query: https://redux-toolkit.js.org/rtk-query/overview
 
 ## ⭐ Programadora estrella
 Realizado por `Cecilia Perdomo`, desde el 09 de Febrero 2024. 
