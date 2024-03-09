@@ -6,6 +6,7 @@ import { useGetCategoriesQuery } from '../app/services/bookstore'
 const Categories = ({ navigation }) => {
 
   const { data: categoria } = useGetCategoriesQuery()
+  
   return (
     <View>
 

@@ -1,27 +1,24 @@
 import { StyleSheet, Text, Image, View, Pressable, useWindowDimensions } from 'react-native'
 import { useEffect, useState } from 'react'
-
-import libros from "../data/libros.json"
 import colors from '../utils/colors'
 
 // Redux
 import { useDispatch } from 'react-redux'
 import { addCartItem } from "../features/cart/cartSlice"
+import { useGetProductByIdQuery } from '../app/services/bookstore'
 
 
 const BooksDetail = ({ route }) => {
   const dispatch = useDispatch()
   const { libroId } = route.params
-  const [book, setBook] = useState({})
+  
+  const { data: book, isLoading } = useGetProductByIdQuery(libroId)
 
   // Rotacion
   const [portait, setPortait] = useState(true)
   const { width, height } = useWindowDimensions()
 
   useEffect(() => {
-    const libro = libros.find(item => item.id === libroId)
-    setBook(libro)
-
     if (width > height) {
       setPortait(false)
     } else {
@@ -30,6 +27,8 @@ const BooksDetail = ({ route }) => {
 
   }, [libroId, height, width])
 
+
+  if (isLoading) return <View><Text style={styles.titulo}>Actualizando...</Text></View>
 
   return (
     <View style={styles.container}>

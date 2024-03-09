@@ -1,7 +1,7 @@
 import { FlatList, View, StyleSheet } from 'react-native'
 import { useEffect, useState } from 'react'
 
-import libros from "../data/libros.json"
+import { useGetBooksbyCategoriesQuery } from '../app/services/bookstore'
 
 import BookCategoryDetail from '../components/BookCategoryDetail'
 import SearchBar from '../components/wrappers/SearchBar'
@@ -9,6 +9,7 @@ import SearchBar from '../components/wrappers/SearchBar'
 
 const Books = ({ route, navigation }) => {
   const { categorySelected } = route.params
+  const { data: books } = useGetBooksbyCategoriesQuery(categorySelected)
 
   // Search
   const [booksFiltered, setBooksFiltered] = useState([])
@@ -17,19 +18,17 @@ const Books = ({ route, navigation }) => {
 
   useEffect(() => {
 
-    if (categorySelected) {
-      setBooksFiltered(libros.filter(libro => libro.category === categorySelected))
-    }
+    setBooksFiltered(books)
 
     if (keyWord) {
-      setBooksFiltered(booksFiltered.filter(libro => {
+      setBooksFiltered(books.filter(libro => {
         const titulo = libro.title.toLowerCase()
         const palabraClave = keyWord.toLowerCase()
         return titulo.includes(palabraClave)
       }))
     }
 
-  }, [categorySelected, keyWord])
+  }, [categorySelected, keyWord, books])
 
   const handlerKeyWord = (k) => {
     setKeyWord(k)

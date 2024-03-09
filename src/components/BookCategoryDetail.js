@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+
 import colors from '../utils/colors'
 import { Image } from 'react-native'
 
