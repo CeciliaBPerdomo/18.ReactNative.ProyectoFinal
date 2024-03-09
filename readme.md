@@ -16,7 +16,7 @@
 </p>
 
 ## :hammer: Funcionalidades del proyecto
-`Funcionalidad`: Se trata de un e-commerce de venta de libros, realizado como proyecto para CoderHouse y realizado con React Native y con 💛.
+`Funcionalidad`: Se trata de un e-commerce de venta de libros, realizado como entregas intermedias para el proyecto final para CoderHouse y realizado con React Native, Firebase y 💛.
 
 
 ## 🛠️ Abre y ejecuta el proyecto
