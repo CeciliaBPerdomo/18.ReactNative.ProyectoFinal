@@ -1,13 +1,33 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 import React, { useState } from 'react'
+
 import InputForm from '../../components/forms/InputForm'
 import SubmitForm from '../../components/forms/SubmitForm'
+
 import colors from '../../utils/colors'
 import fonts from '../../utils/fonts'
 
+// Redux, firebase
+import { useLoginMutation } from '../../app/services/auth'
+import { useDispatch } from 'react-redux'
+import { setUser } from '../../features/auth/authSlice'
+
 const Login = ({ navigation }) => {
+
+    const dispatch = useDispatch()
+
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+
+    const [ triggerLogin ] = useLoginMutation()
+
+    const onSubmit = async () => {
+        const { data } = await triggerLogin({email, password})
+        dispatch(setUser({
+            email: data.email,
+            idToken: data.idToken
+        }))
+    }
 
     return (
         <View style={styles.principal}>
@@ -31,6 +51,7 @@ const Login = ({ navigation }) => {
 
                 <SubmitForm
                     title={"Iniciar sesión"}
+                    onPress={onSubmit}
                 />
 
                 <Text style={styles.sub}>No tienes cuenta?</Text>
