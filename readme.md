@@ -38,6 +38,9 @@
 - `Redux`: 
     - npm install @reduxjs/toolkit react-redux
 
+- `Yup`:
+    - npm install yup
+
 ## 📒 Información útil
 - Jsons: https://dummyjson.com/#google_vignette
 - Colores: https://color.adobe.com/es/create/color-wheel
