@@ -16,8 +16,8 @@ const AuthStack = () => {
                     header: () => {
                         return <Header
                             title={route.name === "SignIn" ? "Iniciar sesión" : "Registro"}
-                            sub={route.name === "SignIn" ? "Encuentra tu próximo favorito 💜" : 
-                            "Registrate para iniciar la aventura"}
+                            sub={route.name === "SignIn" ? "Encuentra tu próximo libro favorito 💜" : 
+                            "Registrate para iniciar la aventura de leer"}
                             navigation={navigation}
                         />
                     }
