@@ -7,10 +7,33 @@ import fonts from '../../utils/fonts'
 import InputForm from '../../components/forms/InputForm'
 import SubmitForm from '../../components/forms/SubmitForm'
 
+// Redux, firebase
+import { useRegistroMutation } from '../../app/services/auth'
+import { setUser } from '../../features/auth/authSlice'
+import { useDispatch } from 'react-redux'
+
 const Register = () => {
+
+    const dispatch = useDispatch()
+
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
+
+    const [ triggerRegistro ] = useRegistroMutation()
+
+    const onSubmit = async () => {
+        try {
+            const { data } = await triggerRegistro({ email, password })
+            dispatch(setUser({
+                email: data.email,
+                idToken: data.idToken
+            }))
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
 
     return (
         <View style={styles.principal}>
@@ -41,7 +64,7 @@ const Register = () => {
                 />
 
                 <SubmitForm
-                    // onPress={onSubmit} 
+                    onPress={onSubmit} 
                     title="Registrarme"
                 />
                 <Text style={styles.sub}>Ya tienes cuenta?</Text>
