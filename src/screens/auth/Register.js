@@ -11,6 +11,7 @@ import SubmitForm from '../../components/forms/SubmitForm'
 import { useRegistroMutation } from '../../app/services/auth'
 import { setUser } from '../../features/auth/authSlice'
 import { useDispatch } from 'react-redux'
+import { registerSchema } from '../../utils/validaciones/authSchema'
 
 const Register = () => {
 
@@ -20,17 +21,38 @@ const Register = () => {
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
 
+    const [errorMail, setErrorMail] = useState("")
+    const [errorPassword, setErrorPassword] = useState("")
+    const [errorConfirm, setErrorConfirm] = useState("")
+
     const [ triggerRegistro ] = useRegistroMutation()
 
     const onSubmit = async () => {
         try {
+            registerSchema.validateSync({email, password, confirmPassword})
             const { data } = await triggerRegistro({ email, password })
             dispatch(setUser({
                 email: data.email,
                 idToken: data.idToken
             }))
         } catch (error) {
-            console.error(error)
+            setErrorMail("")
+            setPassword("")
+            setErrorConfirm("")
+
+            switch (error.path) {
+                case "email":
+                    setErrorMail(error.message)
+                    break
+                case "password":
+                    setErrorPassword(error.message)
+                    break
+                case "confirmPassword":
+                    setErrorConfirm(error.message)
+                    break
+                default:
+                    break
+            }
         }
     }
 
@@ -44,7 +66,7 @@ const Register = () => {
                     value={email}
                     onChangeText={(t) => setEmail(t)}
                     isSecure={false}
-                    error=""
+                    error={errorMail}
                 />
 
                 <InputForm
@@ -52,7 +74,7 @@ const Register = () => {
                     value={password}
                     onChangeText={(t) => setPassword(t)}
                     isSecure={true}
-                    error=""
+                    error={errorPassword}
                 />
 
                 <InputForm
@@ -60,7 +82,7 @@ const Register = () => {
                     value={confirmPassword}
                     onChangeText={(t) => setConfirmPassword(t)}
                     isSecure={true}
-                    error=""
+                    error={errorConfirm}
                 />
 
                 <SubmitForm
