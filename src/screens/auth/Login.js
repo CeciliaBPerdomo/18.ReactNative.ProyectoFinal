@@ -11,6 +11,7 @@ import fonts from '../../utils/fonts'
 import { useLoginMutation } from '../../app/services/auth'
 import { useDispatch } from 'react-redux'
 import { setUser } from '../../features/auth/authSlice'
+import { loginSchema } from '../../utils/validaciones/authSchema'
 
 const Login = ({ navigation }) => {
 
@@ -19,14 +20,34 @@ const Login = ({ navigation }) => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    const [ triggerLogin ] = useLoginMutation()
+    const [errorMail, setErrorMail] = useState("")
+    const [errorPassword, setErrorPassword] = useState("")
+
+    const [triggerLogin] = useLoginMutation()
 
     const onSubmit = async () => {
-        const { data } = await triggerLogin({email, password})
-        dispatch(setUser({
-            email: data.email,
-            idToken: data.idToken
-        }))
+        try {
+            loginSchema.validateSync({ email, password })
+            const { data } = await triggerLogin({ email, password })
+            dispatch(setUser({
+                email: data.email,
+                idToken: data.idToken
+            }))
+        } catch (error) {
+            setErrorMail("")
+            setPassword("")
+
+            switch (error.path) {
+                case "email":
+                    setErrorMail(error.message)
+                    break
+                case "password":
+                    setErrorPassword(error.message)
+                    break
+                default:
+                    break
+            }
+        }
     }
 
     return (
@@ -38,7 +59,7 @@ const Login = ({ navigation }) => {
                     value={email}
                     onChangeText={(t) => setEmail(t)}
                     isSecure={false}
-                    error=""
+                    error={errorMail}
                 />
 
                 <InputForm
@@ -46,7 +67,7 @@ const Login = ({ navigation }) => {
                     value={password}
                     onChangeText={(t) => setPassword(t)}
                     isSecure={true}
-                    error=""
+                    error={errorPassword}
                 />
 
                 <SubmitForm
@@ -74,7 +95,7 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
         alignItems: "center",
     },
-    
+
     container: {
         marginTop: 20,
         width: "90%",
@@ -95,7 +116,7 @@ const styles = StyleSheet.create({
 
     subLink: {
         fontSize: 14,
-        fontFamily: fonts.Playfair, 
+        fontFamily: fonts.Playfair,
         color: colors.primary
     },
 })
