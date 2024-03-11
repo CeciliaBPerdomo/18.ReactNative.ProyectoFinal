@@ -1,17 +1,22 @@
-import { StyleSheet, Text, View } from 'react-native'
-
 // Navegacion
 import { NavigationContainer } from '@react-navigation/native';
-
 import TabNavigation from './TabNavigation';
+import AuthStack from './AuthStack';
 
+import { useState } from 'react';
 
 
 const MainNavigation = () => {
+    const [token, setToken] = useState("")
     return (
         <>
             <NavigationContainer>
-                <TabNavigation />
+                {
+                    token ?
+                        <TabNavigation />
+                        :
+                        <AuthStack />
+                }
             </NavigationContainer>
         </>
     )
