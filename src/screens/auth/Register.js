@@ -33,7 +33,8 @@ const Register = () => {
             const { data } = await triggerRegistro({ email, password })
             dispatch(setUser({
                 email: data.email,
-                idToken: data.idToken
+                idToken: data.idToken,
+                localId: data.localId
             }))
         } catch (error) {
             setErrorMail("")

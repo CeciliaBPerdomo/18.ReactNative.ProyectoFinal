@@ -39,6 +39,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
         paddingVertical: 15,
         backgroundColor: "white",
+        borderBottomWidth: 1, 
+        borderBottomColor: colors.bordes
     },
 
     texto: {

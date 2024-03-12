@@ -31,7 +31,8 @@ const Login = ({ navigation }) => {
             const { data } = await triggerLogin({ email, password })
             dispatch(setUser({
                 email: data.email,
-                idToken: data.idToken
+                idToken: data.idToken,
+                localId: data.localId
             }))
         } catch (error) {
             setErrorMail("")

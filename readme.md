@@ -41,7 +41,11 @@
 - `Yup`:
     - npm install yup
 
-## 📒 Información útil
+- `Image Picker`: 
+    - npm install expo-image-picker
+
+
+## 📃 Documentación
 - Jsons: https://dummyjson.com/#google_vignette
 - Colores: https://color.adobe.com/es/create/color-wheel
 - Iconos: https://oblador.github.io/react-native-vector-icons/
@@ -49,6 +53,7 @@
 - Expo: https://docs.expo.dev/versions/latest/sdk/font/
 - Redux: https://redux-toolkit.js.org/tutorials/quick-start
 - Redux Query: https://redux-toolkit.js.org/rtk-query/overview
+- Image picker: https://docs.expo.dev/versions/latest/sdk/imagepicker/
 
 ## ⭐ Programadora estrella
 Realizado por `Cecilia Perdomo`, desde el 09 de Febrero 2024. 

@@ -11,6 +11,7 @@ import BookStack from './BookStack';
 import TabBarIcon from '../components/TabBarIcon';
 import CartStack from './CartStack';
 import OrdersStack from './OrdersStack';
+import ProfileStack from "./ProfileStack"
 
 const Tab = createBottomTabNavigator();
 
@@ -54,6 +55,17 @@ const TabNavigation = () => {
                     tabBarIcon: ({ focused }) => <TabBarIcon
                         title="Órdenes"
                         icono="list"
+                        focused={focused} />
+                }}
+            />
+
+            <Tab.Screen
+                name="Profile"
+                component={ProfileStack}
+                options={{
+                    tabBarIcon: ({ focused }) => <TabBarIcon
+                        title="Perfil"
+                        icono="users"
                         focused={focused} />
                 }}
             />
