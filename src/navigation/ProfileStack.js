@@ -2,7 +2,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Header from '../components/Header';
 import Perfil from '../screens/auth/Perfil';
+
 import ImageSelector from '../screens/auth/ImageSelector';
+import LocationSelector from "../screens/auth/LocationSelector"
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +33,12 @@ const ProfileStack = () => {
                 name="ImageSelector"
                 component={ImageSelector}
             />
+
+            <Stack.Screen
+                name="LocationSelector"
+                component={LocationSelector}
+            />
+
         </Stack.Navigator>
     )
 }

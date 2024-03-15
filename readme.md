@@ -44,6 +44,13 @@
 - `Image Picker`: 
     - npm install expo-image-picker
 
+- `Dotenv` (.env): 
+    - npm install dotenv
+    - npm install expo-constants
+
+- `Expo Location`:
+    - npm install expo-location
+
 
 ## 📃 Documentación
 - Jsons: https://dummyjson.com/#google_vignette
@@ -54,6 +61,11 @@
 - Redux: https://redux-toolkit.js.org/tutorials/quick-start
 - Redux Query: https://redux-toolkit.js.org/rtk-query/overview
 - Image picker: https://docs.expo.dev/versions/latest/sdk/imagepicker/
+- Google Maps: 
+        - https://developers.google.com/maps/documentation/maps-static/overview?hl=es-419
+        - https://www.cloud.google.com
+        - https://developers.google.com/maps/documentation/geocoding/requests-reverse-geocoding?hl=es-419
+- Expo Location: https://docs.expo.dev/versions/latest/sdk/location/
 
 ## ⭐ Programadora estrella
 Realizado por `Cecilia Perdomo`, desde el 09 de Febrero 2024. 

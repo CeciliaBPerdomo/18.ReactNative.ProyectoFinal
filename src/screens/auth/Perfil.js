@@ -1,7 +1,6 @@
-import { StyleSheet, Image, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Image, View, Text } from 'react-native'
 import { useSelector } from 'react-redux'
-import colors from '../../utils/colors'
+
 import AddButton from '../../components/forms/AddButton'
 import { useGetImageQuery } from '../../app/services/profile'
 
@@ -14,15 +13,24 @@ const Perfil = ({ navigation }) => {
             <Image
                 source={
                     data ? { uri: data.image } :
-                    require("../../../assets/images/user.jpg")
+                        require("../../../assets/images/user.jpg")
                 }
                 style={styles.image}
                 resizeMode='cover'
             />
 
+            <Text style={styles.texto}>
+                La direccion men!
+            </Text>
+
             <AddButton
                 title="Agregar imagen de perfil"
                 onPress={() => navigation.navigate("ImageSelector")}
+            />
+
+            <AddButton
+                title="Agregar dirección"
+                onPress={() => navigation.navigate("LocationSelector")}
             />
         </View>
     )
@@ -42,5 +50,11 @@ const styles = StyleSheet.create({
         width: 180,
         height: 180,
         borderRadius: 100
+    },
+
+    texto: {
+        fontSize: 16,
+        padding: 10,
+        textAlign: "center"
     }
 })

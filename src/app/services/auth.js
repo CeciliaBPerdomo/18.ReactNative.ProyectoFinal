@@ -1,5 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-const API_KEY = "AIzaSyCe7ACT7eiC9eETyuUi4sErpn--aNFNLfY"
+
+// .env 
+import Constants from "expo-constants"
+
+const FIREBASE_KEY = Constants.expoConfig.extra.FIREBASE_KEY
 
 export const authApi = createApi({
     reducerPath: "authApi",
@@ -8,7 +12,7 @@ export const authApi = createApi({
         //Registro de usuarios
         registro: builder.mutation({
             query: (user) => ({
-                url: `accounts:signUp?key=${API_KEY}`,
+                url: `accounts:signUp?key=${FIREBASE_KEY}`,
                 method: "POST", 
                 body: user
             })
@@ -17,7 +21,7 @@ export const authApi = createApi({
         // Inicio de sesion
         login: builder.mutation({
             query: (user) => ({
-                url: `accounts:signInWithPassword?key=${API_KEY}`,
+                url: `accounts:signInWithPassword?key=${FIREBASE_KEY}`,
                 method: "POST", 
                 body: user
             })
