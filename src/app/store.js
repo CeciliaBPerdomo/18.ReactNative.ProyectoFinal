@@ -6,6 +6,7 @@ import { setupListeners } from '@reduxjs/toolkit/query'
 import { bookstoreApi } from './services/bookstore'
 import { authApi } from './services/auth'
 import { profileApi } from './services/profile'
+import { ordersApi } from './services/orders'
 
 // Reducers
 import cartReducer from "../features/cart/cartSlice"
@@ -18,14 +19,20 @@ export const store = configureStore({
     counter: counterReducer,
     auth: authReducer,
 
-    //Firebase
+    // con Firebase
     [bookstoreApi.reducerPath]: bookstoreApi.reducer,
     [authApi.reducerPath]: authApi.reducer,
     [profileApi.reducerPath]: profileApi.reducer,
+    [ordersApi.reducerPath]: ordersApi.reducer,
   },
 
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(bookstoreApi.middleware, authApi.middleware, profileApi.middleware)
+    getDefaultMiddleware().concat(
+      bookstoreApi.middleware,
+      authApi.middleware,
+      profileApi.middleware,
+      ordersApi.middleware
+    )
 })
 
 setupListeners(store.dispatch)

@@ -2,7 +2,6 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 // .env 
 import Constants from "expo-constants"
-
 const FIREBASE_KEY = Constants.expoConfig.extra.FIREBASE_KEY
 
 export const authApi = createApi({
