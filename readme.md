@@ -62,9 +62,9 @@
 - Redux Query: https://redux-toolkit.js.org/rtk-query/overview
 - Image picker: https://docs.expo.dev/versions/latest/sdk/imagepicker/
 - Google Maps: 
-        - https://developers.google.com/maps/documentation/maps-static/overview?hl=es-419
-        - https://www.cloud.google.com
-        - https://developers.google.com/maps/documentation/geocoding/requests-reverse-geocoding?hl=es-419
+    - https://developers.google.com/maps/documentation/maps-static/overview?hl=es-419
+    - https://www.cloud.google.com
+    - https://developers.google.com/maps/documentation/geocoding/requests-reverse-geocoding?hl=es-419
 - Expo Location: https://docs.expo.dev/versions/latest/sdk/location/
 
 ## ⭐ Programadora estrella

@@ -1,9 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, { useState, useEffect } from 'react'
 
-// .env
-import Constants from "expo-constants"
-
 // Componentes
 import AddButton from '../../components/forms/AddButton'
 import MapPreview from '../../components/MapPreview'
@@ -12,7 +9,12 @@ import MapPreview from '../../components/MapPreview'
 import * as Location from "expo-location"
 
 // .env
+import Constants from "expo-constants"
 const MAP_KEY = Constants.expoConfig.extra.MAP_API_KEY;
+
+// Redux
+import { useSelector } from 'react-redux'
+import { usePutUserLocationMutation } from '../../app/services/profile'
 
 const LocationSelector = ({ navigation }) => {
     const [location, setLocation] = useState({
@@ -21,7 +23,10 @@ const LocationSelector = ({ navigation }) => {
     })
 
     const [errorMsg, setErrorMsg] = useState(null)
-    const [address, setAdress] = useState("Colonia")
+    const [address, setAdress] = useState("")
+
+    const localId = useSelector((state) => state.auth.localId)
+    const [triggerUserLocation] = usePutUserLocationMutation()
 
     useEffect(() => {
         // Funcion asincronica anonima
@@ -53,19 +58,18 @@ const LocationSelector = ({ navigation }) => {
 
 
     const onConfirmAddress = async () => {
-        console.log("Confirmado")
 
-        // const locationFormatted = {
-        //     address,
-        //     location
-        // }
+        const locationFormatted = {
+            address,
+            location
+        }
 
-        // await triggerUserLocation({
-        //     localId,
-        //     locationFormatted
-        // })
+        await triggerUserLocation({
+            localId,
+            locationFormatted
+        })
 
-        // navigation.goBack()
+        navigation.goBack()
     }
 
     return (

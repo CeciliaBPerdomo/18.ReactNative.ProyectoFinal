@@ -2,11 +2,12 @@ import { StyleSheet, Image, View, Text } from 'react-native'
 import { useSelector } from 'react-redux'
 
 import AddButton from '../../components/forms/AddButton'
-import { useGetImageQuery } from '../../app/services/profile'
+import { useGetImageQuery, useGetUserLocationQuery } from '../../app/services/profile'
 
 const Perfil = ({ navigation }) => {
     const localId = useSelector((state) => state.auth.localId)
     const { data } = useGetImageQuery(localId)
+    const {data: locationFormatted} = useGetUserLocationQuery(localId)
 
     return (
         <View style={styles.container}>
@@ -20,7 +21,7 @@ const Perfil = ({ navigation }) => {
             />
 
             <Text style={styles.texto}>
-                La direccion men!
+                {locationFormatted.address}
             </Text>
 
             <AddButton
@@ -55,6 +56,7 @@ const styles = StyleSheet.create({
     texto: {
         fontSize: 16,
         padding: 10,
-        textAlign: "center"
+        textAlign: "center",
+        fontWeight: "bold"
     }
 })
