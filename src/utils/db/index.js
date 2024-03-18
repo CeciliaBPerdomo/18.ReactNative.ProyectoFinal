@@ -9,7 +9,7 @@ export const init = () => {
         db.transaction(tx => {
             tx.executeSql(
                 // consulta, crear tabla
-                "CREATE TABLE IF NOT EXISTS sessionUser (localId TEXT NOT NULL, email TEXT NOT NULL, tokenId TEXT NOT NULL)",
+                "CREATE TABLE IF NOT EXISTS sessionUser (localId TEXT NOT NULL, email TEXT NOT NULL, idToken TEXT NOT NULL)",
                 // valores de la consulta
                 [],
                 // si la consulta es exitosa 
@@ -24,12 +24,11 @@ export const init = () => {
 
 // completa la bd
 export const insertSession = ({ localId, email, idToken }) => {
-    console.log(localId,email,idToken)
     const promise = new Promise((resolve, reject) => {
         db.transaction(tx => {
             tx.executeSql(
                 //insertar la tabla los valores del usuairio: localId, email, token                   
-                "INSERT INTO sessionUser (localId,email,idToken) VALUES (localId,email,idToken)",
+                "INSERT INTO sessionUser (localId, email, idToken) VALUES (?, ?, ?)",
                 [localId, email, idToken],
                 (_, result) => resolve(result),
                 (_, result) => reject(result)
@@ -45,7 +44,7 @@ export const fetchSession = () => {
         db.transaction(tx => {
             tx.executeSql(
                 // traer toda la tabla
-                "",
+                "SELECT * FROM sessionUser",
                 [],
                 (_, result) => resolve(result),
                 (_, result) => reject(result)
@@ -61,7 +60,7 @@ export const deleteSession = () => {
         db.transaction(tx => {
             tx.executeSql(
                 //eliminar toda la tabla de la session
-                "",
+                "DELETE FROM sessionUser",
                 [],
                 (_, result) => resolve(result),
                 (_, result) => reject(result)

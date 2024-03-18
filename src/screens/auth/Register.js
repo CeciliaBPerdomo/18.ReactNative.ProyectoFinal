@@ -14,7 +14,7 @@ import { useDispatch } from 'react-redux'
 import { registerSchema } from '../../utils/validaciones/authSchema'
 
 // SQLite
-import {insertSession} from "../../utils/db/index"
+import {deleteSession, insertSession} from "../../utils/db/index"
 
 const Register = ({navigation}) => {
 
@@ -34,9 +34,10 @@ const Register = ({navigation}) => {
         try {
             registerSchema.validateSync({email, password, confirmPassword})
             const { data } = await triggerRegistro({ email, password })
+            
             //SQLite
-            const user = await insertSession(data)
-            console.log(user)
+            await deleteSession()
+            await insertSession(data)
 
             dispatch(setUser({
                 email: data.email,

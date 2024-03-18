@@ -2,9 +2,21 @@ import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
 import colors from '../utils/colors'
 
 // Iconos
-import { Entypo } from "@expo/vector-icons"
+import { Entypo, AntDesign } from "@expo/vector-icons"
+import { useDispatch, useSelector } from 'react-redux'
+
+import { deleteSession } from "../utils/db"
 
 const Header = ({ title, sub, navigation }) => {
+
+    const idToken = useSelector((state) => state.auth.idToken)
+    const dispatch = useDispatch()
+
+    const salir = () => {
+        dispatch(clearUser())
+        deleteSession()
+    }
+
     return (
         <View style={styles.container}>
             <Image
@@ -26,6 +38,21 @@ const Header = ({ title, sub, navigation }) => {
                     <Entypo name="chevron-with-circle-left" size={25} color={colors.botones} />
                 </Pressable>
             }
+
+            {
+                idToken && (
+                    <Pressable 
+                        style={styles.logoutIcon}
+                        onPress={salir}
+                    >
+                        <AntDesign
+                            name="logout"
+                            size={30}
+                            color="black"
+                        />
+                    </Pressable>
+                )
+            }
         </View>
     )
 }
@@ -39,7 +66,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         paddingVertical: 15,
         backgroundColor: "white",
-        borderBottomWidth: 1, 
+        borderBottomWidth: 1,
         borderBottomColor: colors.bordes
     },
 
@@ -55,5 +82,11 @@ const styles = StyleSheet.create({
     imagen: {
         width: 100,
         height: 100,
+    },
+
+    logoutIcon: {
+        position: "absolute",
+        right: 10,
+        bottom: 15
     }
 })

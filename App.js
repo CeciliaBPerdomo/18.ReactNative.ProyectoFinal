@@ -12,10 +12,11 @@ import { store } from "./src/app/store"
 import { Provider } from 'react-redux'
 
 // SQLite
-(async() => {
-  const tabla = await init()
-  // console.log(tabla)
-})()
+// (async() => {
+//   const tabla = await init()
+//   console.log(tabla)
+// })()
+init()
 
 const App = () => {
   // Fuente de las letras
