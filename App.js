@@ -2,6 +2,7 @@ import { StatusBar } from 'react-native';
 import { useFonts } from "expo-font"
 import { fontCollection } from './src/utils/fonts';
 import colors from './src/utils/colors';
+import { init } from './src/utils/db';
 
 // Navegacion
 import MainNavigation from './src/navigation/MainNavigation';
@@ -10,6 +11,11 @@ import MainNavigation from './src/navigation/MainNavigation';
 import { store } from "./src/app/store"
 import { Provider } from 'react-redux'
 
+// SQLite
+(async() => {
+  const tabla = await init()
+  // console.log(tabla)
+})()
 
 const App = () => {
   // Fuente de las letras

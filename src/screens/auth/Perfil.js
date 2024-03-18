@@ -14,14 +14,14 @@ const Perfil = ({ navigation }) => {
             <Image
                 source={
                     data ? { uri: data.image } :
-                        require("../../../assets/images/user.jpg")
+                    require("../../../assets/images/user.jpg")
                 }
                 style={styles.image}
                 resizeMode='cover'
             />
 
             <Text style={styles.texto}>
-                {locationFormatted.address}
+                {locationFormatted?.address}
             </Text>
 
             <AddButton

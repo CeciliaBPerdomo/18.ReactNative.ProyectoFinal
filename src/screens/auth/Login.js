@@ -12,6 +12,7 @@ import { useLoginMutation } from '../../app/services/auth'
 import { useDispatch } from 'react-redux'
 import { setUser } from '../../features/auth/authSlice'
 import { loginSchema } from '../../utils/validaciones/authSchema'
+import { insertSession } from '../../utils/db'
 
 const Login = ({ navigation }) => {
 
@@ -28,12 +29,20 @@ const Login = ({ navigation }) => {
     const onSubmit = async () => {
         try {
             loginSchema.validateSync({ email, password })
-            const { data } = await triggerLogin({ email, password })
+            const { data, error } = await triggerLogin({ email, password })
+            
+            //Para chequear si hay error de inicio de sesion
+            //console.log(error)
+
+            const user = await insertSession(data)
+            console.log(user)
+
             dispatch(setUser({
                 email: data.email,
                 idToken: data.idToken,
                 localId: data.localId
             }))
+
         } catch (error) {
             setErrorMail("")
             setPassword("")

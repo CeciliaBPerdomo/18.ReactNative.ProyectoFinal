@@ -13,7 +13,10 @@ import { setUser } from '../../features/auth/authSlice'
 import { useDispatch } from 'react-redux'
 import { registerSchema } from '../../utils/validaciones/authSchema'
 
-const Register = () => {
+// SQLite
+import {insertSession} from "../../utils/db/index"
+
+const Register = ({navigation}) => {
 
     const dispatch = useDispatch()
 
@@ -31,6 +34,10 @@ const Register = () => {
         try {
             registerSchema.validateSync({email, password, confirmPassword})
             const { data } = await triggerRegistro({ email, password })
+            //SQLite
+            const user = await insertSession(data)
+            console.log(user)
+
             dispatch(setUser({
                 email: data.email,
                 idToken: data.idToken,

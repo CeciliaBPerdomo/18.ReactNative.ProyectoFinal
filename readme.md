@@ -51,6 +51,9 @@
 - `Expo Location`:
     - npm install expo-location
 
+- `SQLite`:
+    - npm install expo-sqlite
+
 
 ## 📃 Documentación
 - Jsons: https://dummyjson.com/#google_vignette
