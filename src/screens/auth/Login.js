@@ -12,7 +12,7 @@ import { useLoginMutation } from '../../app/services/auth'
 import { useDispatch } from 'react-redux'
 import { setUser } from '../../features/auth/authSlice'
 import { loginSchema } from '../../utils/validaciones/authSchema'
-import { deleteSession, insertSession } from '../../utils/db'
+import { deleteSession, insertSession } from '../../utils/db/index'
 
 const Login = ({ navigation }) => {
 
@@ -36,7 +36,6 @@ const Login = ({ navigation }) => {
 
             await deleteSession()
             await insertSession(data)
-            //console.log(user)
 
             dispatch(setUser({
                 email: data.email,

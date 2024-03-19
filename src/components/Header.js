@@ -4,8 +4,9 @@ import colors from '../utils/colors'
 // Iconos
 import { Entypo, AntDesign } from "@expo/vector-icons"
 import { useDispatch, useSelector } from 'react-redux'
+import { clearUser } from '../features/auth/authSlice'
 
-import { deleteSession } from "../utils/db"
+import { deleteSession } from "../utils/db/index"
 
 const Header = ({ title, sub, navigation }) => {
 

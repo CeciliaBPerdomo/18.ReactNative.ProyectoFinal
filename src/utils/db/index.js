@@ -1,26 +1,32 @@
 // Base de datos local del celular
-import * as SQLite from "expo-sqlite"
-
-const db = SQLite.openDatabase('sessions.db')
+import * as SQLite from 'expo-sqlite'
+const db = SQLite.openDatabase('sessions2.db')
 
 // inicia la base de datos
+
 export const init = () => {
     const promise = new Promise((resolve, reject) => {
         db.transaction(tx => {
             tx.executeSql(
                 // consulta, crear tabla
-                "CREATE TABLE IF NOT EXISTS sessionUser (localId TEXT NOT NULL, email TEXT NOT NULL, idToken TEXT NOT NULL)",
+                "CREATE TABLE IF NOT EXISTS sessionUser (localId TEXT NOT NULL,email TEXT NOT NULL,idToken TEXT NOT NULL)",
                 // valores de la consulta
                 [],
                 // si la consulta es exitosa 
-                (_, result) => resolve(result),
-                // si la consulta fallo
-                (_, result) => reject(result)
+                (_, result) => {
+                    //console.log("Insert successful:", result);
+                    resolve(result);
+                },
+                (_, error) => {
+                    console.error("Init error:", error);
+                    reject(error);
+                }
             )
         })
     })
     return promise
 }
+
 
 // completa la bd
 export const insertSession = ({ localId, email, idToken }) => {
@@ -28,10 +34,16 @@ export const insertSession = ({ localId, email, idToken }) => {
         db.transaction(tx => {
             tx.executeSql(
                 //insertar la tabla los valores del usuairio: localId, email, token                   
-                "INSERT INTO sessionUser (localId, email, idToken) VALUES (?, ?, ?)",
+                "INSERT INTO sessionUser(localId, email, idToken) VALUES (?, ?, ?)",
                 [localId, email, idToken],
-                (_, result) => resolve(result),
-                (_, result) => reject(result)
+                (_, result) => {
+                    //console.log("Insert successful:", result);
+                    resolve(result);
+                },
+                (_, error) => {
+                    console.error("Insert error:", error);
+                    reject(error);
+                }
             )
         })
     })
