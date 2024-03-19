@@ -1,7 +1,6 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
-
+import { Pressable, StyleSheet, Text, View, Image } from 'react-native'
 import colors from '../utils/colors'
-import { Image } from 'react-native'
+
 
 const BookCategoryDetail = ({ item, navigation }) => {
     return (
@@ -36,20 +35,21 @@ const styles = StyleSheet.create({
         padding: 10,
         marginVertical: 10,
         borderRadius: 10,
-        gap: 20,
-        flexDirection: "row"
+        gap: 15,
+        flexDirection: "row",
+        height: 160
     },
 
     imagen: {
-        width: 90,
-        height: 90,
+        width: 100,
+        height: 140,
         borderRadius: 5,
     }, 
 
     texto: {
         fontSize: 14,
         fontWeight: "bold",
-        marginVertical: 10
+        marginVertical: 25
     }, 
 
     textoPrecio: {

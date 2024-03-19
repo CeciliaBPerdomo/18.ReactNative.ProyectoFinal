@@ -7,16 +7,20 @@ import { useDispatch } from 'react-redux'
 import { addCartItem } from "../features/cart/cartSlice"
 import { useGetProductByIdQuery } from '../app/services/bookstore'
 
+// Manejo de errores
+import LoadingSpinner from '../components/manejoErrores/LoadingSpinner'
+import ErrorCarga from '../components/manejoErrores/ErrorCarga'
+import ListaVacia from '../components/manejoErrores/ListaVacia'
 
-const BooksDetail = ({ route }) => {
-  const dispatch = useDispatch()
-  const { libroId } = route.params
-  
-  const { data: book, isLoading } = useGetProductByIdQuery(libroId)
-
+const BooksDetail = ({ route, navigation }) => {
   // Rotacion
   const [portait, setPortait] = useState(true)
   const { width, height } = useWindowDimensions()
+  
+  const dispatch = useDispatch()
+  const { libroId } = route.params
+
+  const { data: book, isLoading, isError, isSuccess } = useGetProductByIdQuery(libroId)
 
   useEffect(() => {
     if (width > height) {
@@ -27,8 +31,9 @@ const BooksDetail = ({ route }) => {
 
   }, [libroId, height, width])
 
-
-  if (isLoading) return <View><Text style={styles.titulo}>Actualizando...</Text></View>
+  if (isLoading) return <LoadingSpinner />
+  if (isError) return <ErrorCarga message="Ups! algo salio muy mal" textButton="Volver" onRetry={() => navigation.goBack()} />
+  if (isSuccess && book.length === 0) return <ListaVacia message="No existen libros" />
 
   return (
     <View style={styles.container}>
@@ -52,10 +57,10 @@ const BooksDetail = ({ route }) => {
       <View style={[
         styles.priceContainer,
         !portait && styles.priceContainerPortait
-        ]}>
+      ]}>
         <Text style={styles.price}>$ {book.price}</Text>
 
-        <Pressable style={styles.buyNowBotton} onPress={()=> dispatch(addCartItem(book))}>
+        <Pressable style={styles.buyNowBotton} onPress={() => dispatch(addCartItem(book))}>
           <Text style={styles.textBuy}>
             Agregar al carrito
           </Text>
@@ -103,7 +108,7 @@ const styles = StyleSheet.create({
   imagenPortait: {
     width: "40%",
     height: 200
-  }, 
+  },
 
   priceContainer: {
     width: "100%",
@@ -117,7 +122,7 @@ const styles = StyleSheet.create({
   priceContainerPortait: {
     width: "20%",
     flexDirection: "column"
-  }, 
+  },
 
   textBuy: {
     color: "white",

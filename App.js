@@ -14,7 +14,7 @@ import { Provider } from 'react-redux'
 // SQLite
 (async() => {
   const tabla = await init()
-  console.log(tabla)
+  //console.log(tabla)
 })()
 //init()
 

@@ -16,6 +16,8 @@ import { registerSchema } from '../../utils/validaciones/authSchema'
 // SQLite
 import {deleteSession, insertSession} from "../../utils/db/index"
 
+import ModalMessage from '../../components/manejoErrores/ModalMessage'
+
 const Register = ({navigation}) => {
 
     const dispatch = useDispatch()
@@ -28,12 +30,29 @@ const Register = ({navigation}) => {
     const [errorPassword, setErrorPassword] = useState("")
     const [errorConfirm, setErrorConfirm] = useState("")
 
+    const [modalVisible, setModalVisible] = useState(false)
+    const [errorModal, setErrorModal] = useState("")
+
     const [ triggerRegistro ] = useRegistroMutation()
+
+    const handlerOnClose = () => {
+        setModalVisible(false)
+    }
 
     const onSubmit = async () => {
         try {
             registerSchema.validateSync({email, password, confirmPassword})
-            const { data } = await triggerRegistro({ email, password })
+            const { data, error } = await triggerRegistro({ email, password })
+
+            if (error) {
+                if (error.data.error.message == "EMAIL_EXISTS"){
+                    setErrorModal("El usuario ya existe!")
+                    setModalVisible(true)
+                } else {
+                    setErrorModal("Algo salió mal durante el registro!")
+                    setModalVisible(true)
+                }
+            }
             
             //SQLite
             await deleteSession()
@@ -104,6 +123,14 @@ const Register = ({navigation}) => {
                     <Text style={styles.subLink}>Inicia sesión</Text>
                 </Pressable>
             </View>
+
+            <ModalMessage
+                text={errorModal}
+                modalVisible={modalVisible}
+                textButton="Vuelva a intentar"
+                onClose={handlerOnClose}
+            />
+
         </View>
     )
 }

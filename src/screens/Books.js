@@ -1,4 +1,4 @@
-import { FlatList, View, StyleSheet } from 'react-native'
+import { FlatList, View, StyleSheet, Text } from 'react-native'
 import { useEffect, useState } from 'react'
 
 import { useGetBooksbyCategoriesQuery } from '../app/services/bookstore'
@@ -6,18 +6,20 @@ import { useGetBooksbyCategoriesQuery } from '../app/services/bookstore'
 import BookCategoryDetail from '../components/BookCategoryDetail'
 import SearchBar from '../components/wrappers/SearchBar'
 
+//Manejo de errores
+import LoadingSpinner from '../components/manejoErrores/LoadingSpinner'
+import ErrorCarga from '../components/manejoErrores/ErrorCarga'
+import ListaVacia from '../components/manejoErrores/ListaVacia'
+
 
 const Books = ({ route, navigation }) => {
-  const { categorySelected } = route.params
-  const { data: books } = useGetBooksbyCategoriesQuery(categorySelected)
-
   // Search
   const [booksFiltered, setBooksFiltered] = useState([])
   const [keyWord, setKeyWord] = useState("")
-
+  const { categorySelected } = route.params
+  const { data: books, isLoading, isError, isSuccess } = useGetBooksbyCategoriesQuery(categorySelected)
 
   useEffect(() => {
-
     setBooksFiltered(books)
 
     if (keyWord) {
@@ -27,10 +29,13 @@ const Books = ({ route, navigation }) => {
         return titulo.includes(palabraClave)
       }))
     }
-
   }, [categorySelected, keyWord, books])
 
-  const handlerKeyWord = (k) => {
+  if (isLoading) return <LoadingSpinner />
+  if (isError) return <ErrorCarga message="Ups! algo salio muy mal" textButton="Volver" onRetry={() => navigation.goBack()} />
+  if (isSuccess && books == null) return <ListaVacia message="No existen libros" />
+
+    const handlerKeyWord = (k) => {
     setKeyWord(k)
   }
 
@@ -58,6 +63,6 @@ export default Books
 
 const styles = StyleSheet.create({
   container: {
-      marginBottom: 160
+    marginBottom: 160,
   }
 })

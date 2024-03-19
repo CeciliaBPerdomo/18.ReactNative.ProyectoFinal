@@ -1,12 +1,42 @@
 [
-    "Aventura",
-    "Ciencia ficción",
-    "Crecimiento personal",
-    "Deportes",
-    "Guerra",
-    "Novela",
-    "Novela histórica",
-    "Novela negra",
-    "Novela romantíca",
-    "Salud"
+    {
+        "categoria": "Aventura",
+        "imagen": "https://ibb.co/19YcD0d"
+    },
+    {
+        "categoria": "Ciencia ficción",
+        "imagen": ""
+    },
+    {
+        "categoria": "Crecimiento personal",
+        "imagen": ""
+    },
+    {
+        "categoria": "Deportes",
+        "imagen": ""
+    },
+    {
+        "categoria": "Guerra",
+        "imagen": ""
+    },
+    {
+        "categoria": "Novela",
+        "imagen": ""
+    },
+    {
+        "categoria": "Novela histórica",
+        "imagen": ""
+    },
+    {
+        "categoria": "Novela negra",
+        "imagen": ""
+    },
+    {
+        "categoria": "Novela romantíca",
+        "imagen": ""
+    },
+    {
+        "categoria": "Salud",
+        "imagen": ""
+    }
 ]

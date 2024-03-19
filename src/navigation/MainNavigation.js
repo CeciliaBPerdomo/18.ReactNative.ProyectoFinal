@@ -19,7 +19,13 @@ const MainNavigation = () => {
     useEffect(() => {
         (async() => {
             const session = await fetchSession() 
-            if (session.rows.length){
+            
+            // Deslogueo automatico 
+            const updateAt = session.rows._array[0].updateAt
+            const now = Math.floor(Date.now() / 1000)
+            const timeSeesion = now - updateAt
+
+            if(timeSeesion < 3600) {
                 const user = session.rows._array[0]  
                 dispatch(setUser(user))
             }

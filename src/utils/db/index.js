@@ -1,6 +1,6 @@
 // Base de datos local del celular
 import * as SQLite from 'expo-sqlite'
-const db = SQLite.openDatabase('sessions2.db')
+const db = SQLite.openDatabase('sessions3.db')
 
 // inicia la base de datos
 
@@ -9,7 +9,7 @@ export const init = () => {
         db.transaction(tx => {
             tx.executeSql(
                 // consulta, crear tabla
-                "CREATE TABLE IF NOT EXISTS sessionUser (localId TEXT NOT NULL,email TEXT NOT NULL,idToken TEXT NOT NULL)",
+                "CREATE TABLE IF NOT EXISTS sessionUser (localId TEXT NOT NULL, email TEXT NOT NULL, idToken TEXT NOT NULL, updateAt INTEGER)",
                 // valores de la consulta
                 [],
                 // si la consulta es exitosa 
@@ -34,7 +34,7 @@ export const insertSession = ({ localId, email, idToken }) => {
         db.transaction(tx => {
             tx.executeSql(
                 //insertar la tabla los valores del usuairio: localId, email, token                   
-                "INSERT INTO sessionUser(localId, email, idToken) VALUES (?, ?, ?)",
+                "INSERT INTO sessionUser(localId, email, idToken, updateAt) VALUES (?, ?, ?, strftime('%s', 'now'))",
                 [localId, email, idToken],
                 (_, result) => {
                     //console.log("Insert successful:", result);

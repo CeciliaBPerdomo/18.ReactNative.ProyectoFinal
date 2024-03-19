@@ -13,6 +13,7 @@ import { useDispatch } from 'react-redux'
 import { setUser } from '../../features/auth/authSlice'
 import { loginSchema } from '../../utils/validaciones/authSchema'
 import { deleteSession, insertSession } from '../../utils/db/index'
+import ModalMessage from '../../components/manejoErrores/ModalMessage'
 
 const Login = ({ navigation }) => {
 
@@ -24,15 +25,21 @@ const Login = ({ navigation }) => {
     const [errorMail, setErrorMail] = useState("")
     const [errorPassword, setErrorPassword] = useState("")
 
+    const [modalVisible, setModalVisible] = useState(false)
     const [triggerLogin] = useLoginMutation()
+
+    const handlerOnClose = () => {
+        setModalVisible(false)
+    }
 
     const onSubmit = async () => {
         try {
             loginSchema.validateSync({ email, password })
             const { data, error } = await triggerLogin({ email, password })
-            
-            //Para chequear si hay error de inicio de sesion
-            //console.log(error)
+
+            if (error) {
+                setModalVisible(true)
+            }
 
             await deleteSession()
             await insertSession(data)
@@ -61,38 +68,47 @@ const Login = ({ navigation }) => {
     }
 
     return (
-        <View style={styles.principal}>
-            <View style={styles.container}>
+        <>
+            <View style={styles.principal}>
+                <View style={styles.container}>
 
-                <InputForm
-                    label="E-mail: "
-                    value={email}
-                    onChangeText={(t) => setEmail(t)}
-                    isSecure={false}
-                    error={errorMail}
-                />
+                    <InputForm
+                        label="E-mail: "
+                        value={email}
+                        onChangeText={(t) => setEmail(t)}
+                        isSecure={false}
+                        error={errorMail}
+                    />
 
-                <InputForm
-                    label="Contraseña :"
-                    value={password}
-                    onChangeText={(t) => setPassword(t)}
-                    isSecure={true}
-                    error={errorPassword}
-                />
+                    <InputForm
+                        label="Contraseña :"
+                        value={password}
+                        onChangeText={(t) => setPassword(t)}
+                        isSecure={true}
+                        error={errorPassword}
+                    />
 
-                <SubmitForm
-                    title={"Iniciar sesión"}
-                    onPress={onSubmit}
-                />
+                    <SubmitForm
+                        title={"Iniciar sesión"}
+                        onPress={onSubmit}
+                    />
 
-                <Text style={styles.sub}>No tienes cuenta?</Text>
+                    <Text style={styles.sub}>No tienes cuenta?</Text>
 
-                <Pressable onPress={() => navigation.navigate("Register")}>
-                    <Text style={styles.subLink}>Registrate</Text>
-                </Pressable>
+                    <Pressable onPress={() => navigation.navigate("Register")}>
+                        <Text style={styles.subLink}>Registrate</Text>
+                    </Pressable>
 
+                </View>
             </View>
-        </View>
+
+            <ModalMessage
+                text="E-mail o password inválidos"
+                modalVisible={modalVisible}
+                textButton="Vuelva a intentar"
+                onClose={handlerOnClose}
+            />
+        </>
     )
 }
 
