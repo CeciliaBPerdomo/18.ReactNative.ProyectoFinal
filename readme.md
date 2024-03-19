@@ -78,7 +78,7 @@
 - `YAGNI`: You aren't gonna need it
 
 ## ⭐ Programadora estrella
-Realizado por **Cecilia Perdomo**, desde el 09 de Febrero 2024. 
+Realizado por **Cecilia Perdomo(https://www.linkedin.com/in/cecilia-perdomo/)**, desde el 09 de Febrero 2024. 
 
 ##
 ![GitHub Org's stars](https://img.shields.io/github/stars/camilafernanda?style=social)
