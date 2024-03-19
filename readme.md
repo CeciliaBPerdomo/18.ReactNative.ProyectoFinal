@@ -70,14 +70,14 @@
     - https://developers.google.com/maps/documentation/geocoding/requests-reverse-geocoding?hl=es-419
 - Expo Location: https://docs.expo.dev/versions/latest/sdk/location/
 - Generador de fechas (Timestamp): https://www.unixtimestamp.com/
-- Markdown language: https://www.markdownguide.org/cheat-sheet/
+- Markdown language: https://www.markdownguide.org/basic-syntax/
 
 ## 📱 Principios de optimización: 
 - `KISS`: Keep it simple, stupid!
 - `DRY`: Don't repeat yourself 
 - `YAGNI`: You aren't gonna need it
 
-> ⭐ Programadora estrella
+## ⭐ Programadora estrella
 Realizado por **Cecilia Perdomo**, desde el 09 de Febrero 2024. 
 
 ##
