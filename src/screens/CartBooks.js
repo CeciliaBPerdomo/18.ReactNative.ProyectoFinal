@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { usePostOrdersMutation } from '../app/services/orders'
 import { deleteCart } from '../features/cart/cartSlice'
 
-const Cart = ({navigation}) => {
+const Cart = ({ navigation }) => {
   const dispatch = useDispatch()
   const cart = useSelector((state) => state.cart)
   const localId = useSelector((state) => state.auth.localId)
@@ -24,28 +24,36 @@ const Cart = ({navigation}) => {
     // Guarda las ordenes
     await triggerAddOrder({ localId, order })
     dispatch(deleteCart())
-    navigation.navigate("Ordenes")
+    navigation.navigate("MisOrdenes")
   }
 
-  return (
-    <View style={styles.container}>
+  if (cart.items && cart.items.length > 0) {
+    return (
+      <View style={styles.container}>
+        <FlatList
+          data={cart.items}
+          keyExtractor={(item => item.id)}
+          renderItem={({ item }) => <CartBooks item={item} />}
+        />
 
-      <FlatList
-        data={cart.items}
-        keyExtractor={(item => item.id)}
-        renderItem={({ item }) => <CartBooks item={item} />}
-      />
+        <View style={styles.confirmContainer}>
+          <Pressable onPress={handlerAppOrder}>
+            <Text style={styles.confirmText}>Confirmar</Text>
+          </Pressable>
+          <Text style={styles.confirmText}>Total: $ {cart.total}</Text>
 
-      <View style={styles.confirmContainer}>
-        <Pressable onPress={handlerAppOrder}>
-          <Text style={styles.confirmText}>Confirmar</Text>
-        </Pressable>
-        <Text style={styles.confirmText}>Total: $ {cart.total}</Text>
+        </View>
 
       </View>
-
-    </View>
-  )
+    )
+  } else {
+    return (
+      <View style={styles.containerCarritoVacio}>
+        <Text style={styles.textoVacio}>Tu carrito esta vacío.</Text>
+        <Text style={styles.textoVacio}>¿Qué esperas para comenzar a comprar?</Text>
+        </View>
+    )
+  }
 }
 
 export default Cart
@@ -70,5 +78,19 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: colors.precio
   },
+
+  containerCarritoVacio: {
+    flex: 1, 
+    backgroundColor: "white", 
+    //justifyContent: "center",
+    paddingVertical: 100,
+    alignItems: "center",
+  }, 
+  
+  textoVacio: {
+    fontFamily: fonts.Playfair, 
+    fontSize: 16,
+    color: colors.primary
+  }
 
 })

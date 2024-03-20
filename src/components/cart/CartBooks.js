@@ -18,6 +18,7 @@ const CartBooks = ({ item }) => {
         height={75}
         style={styles.imagen}
       />
+
       <View style={styles.textContainer}>
         <Text style={styles.text}>{item.title}</Text>
         <Text style={styles.text2}>Autor: {item.author}</Text>
@@ -28,6 +29,7 @@ const CartBooks = ({ item }) => {
       <Pressable onPress={() => dispatch(deleteCartItem(item.id))}>
         <Entypo name="trash" size={30} color="black" />
       </Pressable>
+      
     </View>
   )
 
@@ -45,7 +47,6 @@ const styles = StyleSheet.create({
     borderColor: colors.bordes,
     flexDirection: "row",
     justifyContent: "space-between",
-    height: 100,
     alignItems: "center"
   },
 

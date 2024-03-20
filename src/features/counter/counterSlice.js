@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // valor inicial del estado //store
 const initialState = {
-    value: 0,
+    value: 1,
 }
 
 export const counterSlice = createSlice({

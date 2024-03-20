@@ -14,11 +14,11 @@ export const cartSlice = createSlice({
         addCartItem: (state, action) => {
             const existingItem = state.items.findIndex((item) => item.id === action.payload.id)
             if (existingItem === -1) {
-                state.items = [...state.items, { ...action.payload, quantity: 1 }]
+                state.items = [...state.items, { ...action.payload }]
             } else {
                 state.items = state.items.map((item) => {
                     if (item.id === action.payload.id) {
-                        return { ...item, quantity: item.quantity + 1 }
+                        return { ...item, quantity: item.quantity + action.payload.quantity }
                     }
                     return item
                 })

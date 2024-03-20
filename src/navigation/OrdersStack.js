@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import BookOrders from "../screens/BooksOrders"
 
@@ -24,7 +24,7 @@ const OrdersStack = () => {
             }}
         >
             <Stack.Screen
-                name="Ordenes"
+                name="MisOrdenes"
                 component={BookOrders}
             />
         </Stack.Navigator>

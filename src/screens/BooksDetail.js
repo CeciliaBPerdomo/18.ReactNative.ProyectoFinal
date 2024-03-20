@@ -11,12 +11,14 @@ import { useGetProductByIdQuery } from '../app/services/bookstore'
 import LoadingSpinner from '../components/manejoErrores/LoadingSpinner'
 import ErrorCarga from '../components/manejoErrores/ErrorCarga'
 import ListaVacia from '../components/manejoErrores/ListaVacia'
+import Counter from '../components/Counter'
+import fonts from '../utils/fonts'
 
 const BooksDetail = ({ route, navigation }) => {
   // Rotacion
   const [portait, setPortait] = useState(true)
   const { width, height } = useWindowDimensions()
-  
+
   const dispatch = useDispatch()
   const { libroId } = route.params
 
@@ -35,36 +37,33 @@ const BooksDetail = ({ route, navigation }) => {
   if (isError) return <ErrorCarga message="Ups! algo salio muy mal" textButton="Volver" onRetry={() => navigation.goBack()} />
   if (isSuccess && book.length === 0) return <ListaVacia message="No existen libros" />
 
+  const handlerAddCartItem = (quantity) => {
+    dispatch(addCartItem({ ...book, quantity }))
+  }
+
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>{book.title} - {book.author}</Text>
+      <Text style={styles.titulo}> {book.title} </Text>
+      <Text style={styles.autor}>{book.author}</Text>
 
-      <View style={[styles.content,
-      // si esta acostado
-      !portait && styles.contentPortait
-      ]}>
+      <Image
+        style={[styles.imagen, !portait && styles.imagenPortait]}
+        source={{ uri: book.image }}
+        resizeMode="cover"
+      />
 
-        <Image
-          style={[styles.imagen,
-          !portait && styles.imagenPortait
-          ]}
-          source={{ uri: book.image }}
-          resizeMode="cover"
-        />
-
-      </View>
+      <Counter
+        initialValue={1}
+        handlerAddCartItem={handlerAddCartItem}
+      />
 
       <View style={[
         styles.priceContainer,
         !portait && styles.priceContainerPortait
       ]}>
+
         <Text style={styles.price}>$ {book.price}</Text>
 
-        <Pressable style={styles.buyNowBotton} onPress={() => dispatch(addCartItem(book))}>
-          <Text style={styles.textBuy}>
-            Agregar al carrito
-          </Text>
-        </Pressable>
       </View>
     </View>
   )
@@ -89,10 +88,14 @@ const styles = StyleSheet.create({
   },
 
   titulo: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: "bold",
-    paddingBottom: 15,
-    paddingTop: 10,
+    paddingBottom: 3,
+    fontFamily: fonts.Playfair
+  },
+
+  autor: {
+    marginBottom: 3
   },
 
   content: {
@@ -100,9 +103,11 @@ const styles = StyleSheet.create({
   },
 
   imagen: {
-    width: 350,
-    height: 240,
-    borderRadius: 5,
+    width: 150,
+    height: "55%",
+    borderRadius: 25,
+    marginBottom: 5,
+    marginTop: 5
   },
 
   imagenPortait: {
@@ -112,11 +117,9 @@ const styles = StyleSheet.create({
 
   priceContainer: {
     width: "100%",
-    flexDirection: "row",
-    justifyContent: "space-around",
     alignItems: "center",
     marginVertical: 18,
-    backgroundColor: "#FFF",
+    backgroundColor: colors.bordes
   },
 
   priceContainerPortait: {
@@ -124,22 +127,9 @@ const styles = StyleSheet.create({
     flexDirection: "column"
   },
 
-  textBuy: {
-    color: "white",
-    fontWeight: "bold",
-    fontSize: 18
-  },
-
-  buyNowBotton: {
-    backgroundColor: colors.botones,
-    paddingVertical: 15,
-    paddingHorizontal: 20,
-    borderRadius: 5
-  },
-
   price: {
     fontSize: 30,
     fontWeight: "bold",
-    color: colors.precio
+    color: colors.precio,
   }
 })

@@ -6,7 +6,7 @@ import OrdersItems from '../components/orders/OrdersItems'
 import { useSelector } from 'react-redux'
 import { useGetOrdersQuery } from '../app/services/orders'
 
-const BooksOrders = () => {
+const BooksOrders = ({navigation}) => {
   const localId = useSelector((state) => state.auth.localId)
   const { data: orders } = useGetOrdersQuery(localId)
 

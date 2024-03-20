@@ -1,32 +1,41 @@
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native'
 import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment } from '../features/counter/counterSlice'
+// import { useSelector, useDispatch } from 'react-redux'
+// import { decrement, increment } from '../features/counter/counterSlice'
 
-const Counter = () => {
-    const count = useSelector((state) => state.counter.value)   //accedo al estado global del valor del contador
-    const dispatch = useDispatch()
 
-    const [number, setNumber] = useState(0)
+const Counter = ({ handlerAddCartItem }) => {
+    //const count = useSelector((state) => state.counter.value)   //accedo al estado global del valor del contador
+   // const dispatch = useDispatch()
+
+    //const [number, setNumber] = useState(0)
+    const [count, setCount] = useState(1)
 
     return (
         <View style={styles.counterContainer}>
-            <Button title="Aumentar"
-                onPress={() => dispatch(increment())}
+
+            <Button
+                title="+"
+                onPress={() => setCount(count + 1)}
             ></Button>
 
-            <Text>{count}</Text>
+           <Text>
+            {count}
+           </Text>
 
-            <Button title="Disminuir"
-                onPress={() => dispatch(decrement())}
+            <Button title="-"
+                onPress={() => setCount(count - 1)}
             ></Button>
 
-            <TextInput style={styles.input} onChangeText={(t) => setNumber(parseInt(t))} />
+            <View>
+                <Button
+                    title="🛒"
+                    onPress={() => handlerAddCartItem(count)}
+                // dispatch(incrementByAmount(number))}
+                ></Button>
+            </View>
 
-            <Button title="Monto"
-            // onPress={() => dispatch(incrementByAmount(number))}
-            ></Button>
-            
+
         </View>
     )
 }
@@ -38,11 +47,13 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-around",
         alignItems: "center",
-        margin: 10
+        margin: 10,
+        width: 200,
     },
 
     input: {
         borderWidth: 2,
-        width: 50
+        width: 50,
+        textAlign: "center"
     }
 })
