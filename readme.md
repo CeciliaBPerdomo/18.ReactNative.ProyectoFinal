@@ -35,7 +35,7 @@
         <th>Libros</th>
         <th>Carrito</th>
         <th>Órdenes</th>
-        <th>Detalle</th>
+        <th>Detalle de órdenes</th>
         <th>Perfil</th>
     </tr>
     <tr>
