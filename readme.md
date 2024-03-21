@@ -55,7 +55,13 @@
     - npm install expo-sqlite
 
 
-## 📃 Documentación
+## 📃 Documentación útil
+<table>
+    <tr>
+        <td>Jsons</td>
+        <td>https://dummyjson.com/#google_vignette</td>
+    </tr>
+</table>
 - Jsons: https://dummyjson.com/#google_vignette
 - Colores: https://color.adobe.com/es/create/color-wheel
 - Iconos: https://oblador.github.io/react-native-vector-icons/
