@@ -61,9 +61,12 @@
         <td>Jsons</td>
         <td>https://dummyjson.com/#google_vignette</td>
     </tr>
+    <tr>
+        <td>Colores</td>
+        <td>https://color.adobe.com/es/create/color-wheel</td>
+    </tr>
 </table>
-- Jsons: https://dummyjson.com/#google_vignette
-- Colores: https://color.adobe.com/es/create/color-wheel
+
 - Iconos: https://oblador.github.io/react-native-vector-icons/
 - Navegación: https://reactnavigation.org/docs/getting-started
 - Expo: https://docs.expo.dev/versions/latest/sdk/font/
