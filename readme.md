@@ -39,7 +39,7 @@
         <th>Perfil</th>
     </tr>
     <tr>
-        <td><img src="./assets/images/Readme/InicioSesion.jpg" width="140"></td>
+        <td><img src="./assets/images/Readme/InicioSesion.jpg" width="140" height="100"></td>
         <td><img src="./assets/images/Readme/Registro.jpg" width="140"></td>
         <td><img src="./assets/images/Readme/Categorias.jpg" width="140"></td>
         <td><img src="./assets/images/Readme/Libro.jpg" width="140"></td>
