@@ -34,13 +34,19 @@
         <th>Categorias</th>
         <th>Libros</th>
         <th>Carrito</th>
+        <th>Ordenes</th>
+        <th>Detalle</th>
+        <th>Perfil</th>
     </tr>
     <tr>
-        <td><img src="./assets/images/Readme/InicioSesion.jpg" width="20%"></td>
+        <td><img src="./assets/images/Readme/InicioSesion.jpg" width="120"></td>
         <td><img src="./assets/images/Readme/Registro.jpg" width="20%"></td>
         <td><img src="./assets/images/Readme/Categorias.jpg" width="20%"></td>
         <td><img src="./assets/images/Readme/Libro.jpg" width="20%"></td>
         <td><img src="./assets/images/Readme/Carrito.jpg" width="20%"></td>
+        <td><img src="./assets/images/Readme/Ordenes.jpg" width="20%"></td>
+        <td><img src="./assets/images/Readme/DetalleOrdenes.jpg" width="20%"></td>
+        <td><img src="./assets/images/Readme/Perfil.jpg" width="20%"></td>
   </tr>
 </table>
 
