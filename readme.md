@@ -28,9 +28,16 @@
 </table>
 
 <table>
-    <td>
-        <tr><img src="./assets/images/Readme/InicioSesion.jpg" width="20%"></tr>
-    </td>
+    <tr>
+        <th>Inicio de sesión</th>
+        <th>Registro</th>
+        <th>Categorias</th>
+    </tr>
+    <tr>
+        <td><img src="./assets/images/Readme/InicioSesion.jpg" width="20%"></td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+    </tr>
 </table>
 
 ## 📦 Instalaciones: 
