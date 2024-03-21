@@ -31,10 +31,10 @@
     <tr>
         <th>Inicio de sesión</th>
         <th>Registro</th>
-        <th>Categorias</th>
+        <th>Categorías</th>
         <th>Libros</th>
         <th>Carrito</th>
-        <th>Ordenes</th>
+        <th>Órdenes</th>
         <th>Detalle</th>
         <th>Perfil</th>
     </tr>
