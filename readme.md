@@ -65,13 +65,30 @@
         <td>Colores</td>
         <td>https://color.adobe.com/es/create/color-wheel</td>
     </tr>
+    <tr>
+        <td>Iconos</td>
+        <td>https://oblador.github.io/react-native-vector-icons/</td>
+    </tr>
+    <tr>
+        <td>Navegación</td>
+        <td>https://reactnavigation.org/docs/getting-started</td>
+    </tr>
+    <tr>
+        <td>Expo</td>
+        <td>https://docs.expo.dev/versions/latest/sdk/font/</td>
+    </tr>
+    <tr>
+        <td>Redux Toolkit</td>
+        <td>https://redux-toolkit.js.org/tutorials/quick-start/</td>
+    </tr>
+     <tr>
+        <td>Redux Query</td>
+        <td>https://redux-toolkit.js.org/rtk-query/overview</td>
+    </tr>
+
 </table>
 
-- Iconos: https://oblador.github.io/react-native-vector-icons/
-- Navegación: https://reactnavigation.org/docs/getting-started
-- Expo: https://docs.expo.dev/versions/latest/sdk/font/
-- Redux: https://redux-toolkit.js.org/tutorials/quick-start
-- Redux Query: https://redux-toolkit.js.org/rtk-query/overview
+
 - Image picker: https://docs.expo.dev/versions/latest/sdk/imagepicker/
 - Google Maps: 
     - https://developers.google.com/maps/documentation/maps-static/overview?hl=es-419
