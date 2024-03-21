@@ -34,7 +34,7 @@
         <th>Categorias</th>
     </tr>
     <tr>
-        <td><img src="./assets/images/Readme/InicioSesion.jpg" height="20%"></td>
+        <td><img src="./assets/images/Readme/InicioSesion.jpg" height="5%"></td>
         <td>Maria Anders</td>
         <td>Germany</td>
     </tr>
