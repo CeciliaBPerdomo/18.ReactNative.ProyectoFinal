@@ -20,12 +20,23 @@
 
 
 ## 🛠️ Abre y ejecuta el proyecto
-- `Ejecución`: npm start
+<table>
+    <tr>
+        <td>Ejecución</td>
+        <td>npm start</td>
+    </tr>
+</table>
+
+<table>
+    <td>
+        <tr><img src="./assets/images/Readme/InicioSesion.jpg" width="20%"></tr>
+    </td>
+</table>
 
 ## 📦 Instalaciones: 
 <table>
     <tr>
-        <td>nstalación</td>
+        <td>Instalación</td>
         <td>npm install</td>
     </tr>
     <tr>
