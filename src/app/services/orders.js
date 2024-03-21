@@ -22,13 +22,15 @@ export const ordersApi = createApi({
         getOrders: builder.query({
             query: (localId) => `orders/${localId}.json`,
             transformResponse: (response) => {
-                const data = Object.entries(response).map((item) => {
-                    return {
-                        id: item[0],
-                        ...item[1]
-                    }
-                })
-                return data
+                if (response != null) {
+                    const data = Object.entries(response).map((item) => {
+                        return {
+                            id: item[0],
+                            ...item[1]
+                        }
+                    })
+                    return data
+                }
             },
             //Controla si se actualizo las ordenes
             providesTags: ["Orders"]

@@ -4,6 +4,7 @@ import BookOrders from "../screens/BooksOrders"
 
 // Encabezado 
 import Header from '../components/Header';
+import OrdersDetail from '../screens/OrdersDetail';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,11 @@ const OrdersStack = () => {
             <Stack.Screen
                 name="MisOrdenes"
                 component={BookOrders}
+            />
+
+            <Stack.Screen 
+                name="BookOrdersDetail"
+                component={OrdersDetail}
             />
         </Stack.Navigator>
     )
