@@ -85,18 +85,33 @@
         <td>Redux Query</td>
         <td>https://redux-toolkit.js.org/rtk-query/overview</td>
     </tr>
-
+    <tr>
+        <td>Image picker</td>
+        <td>https://docs.expo.dev/versions/latest/sdk/imagepicker/</td>
+    </tr>
+    <tr>
+        <td>Google Maps</td>
+        <td>
+            <ul>
+                <li>https://developers.google.com/maps/documentation/maps-static/overview?hl=es-419</li>
+                <li>https://www.cloud.google.com</li>
+                <li>https://developers.google.com/maps/documentation/geocoding/requests-reverse-geocoding?hl=es-419</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Expo Location</td>
+        <td>https://docs.expo.dev/versions/latest/sdk/location/</td>
+    </tr>
+    <tr>
+        <td>Generador de fechas (Timestamp)</td>
+        <td>https://www.unixtimestamp.com/</td>
+    </tr>
+    <tr>
+        <td>Markdown language</td>
+        <td>https://www.markdownguide.org/basic-syntax/</td>
+    </tr> 
 </table>
-
-
-- Image picker: https://docs.expo.dev/versions/latest/sdk/imagepicker/
-- Google Maps: 
-    - https://developers.google.com/maps/documentation/maps-static/overview?hl=es-419
-    - https://www.cloud.google.com
-    - https://developers.google.com/maps/documentation/geocoding/requests-reverse-geocoding?hl=es-419
-- Expo Location: https://docs.expo.dev/versions/latest/sdk/location/
-- Generador de fechas (Timestamp): https://www.unixtimestamp.com/
-- Markdown language: https://www.markdownguide.org/basic-syntax/
 
 ## 📱 Principios de optimización: 
 - `KISS`: Keep it simple, stupid!
