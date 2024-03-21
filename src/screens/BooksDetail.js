@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#FFF",
-    marginBottom: 80,
+    marginBottom: 70,
     flex: 1
   },
 
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
 
   imagen: {
     width: 150,
-    height: "55%",
+    height: "50%",
     borderRadius: 25,
     marginBottom: 5,
     marginTop: 5
@@ -118,8 +118,9 @@ const styles = StyleSheet.create({
   priceContainer: {
     width: "100%",
     alignItems: "center",
-    marginVertical: 18,
-    backgroundColor: colors.bordes
+    marginVertical: 12,
+    backgroundColor: colors.bordes,
+    padding: 5
   },
 
   priceContainerPortait: {

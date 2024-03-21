@@ -82,7 +82,6 @@ const styles = StyleSheet.create({
   containerCarritoVacio: {
     flex: 1, 
     backgroundColor: "white", 
-    //justifyContent: "center",
     paddingVertical: 100,
     alignItems: "center",
   }, 
