@@ -39,14 +39,14 @@
         <th>Perfil</th>
     </tr>
     <tr>
-        <td><img src="./assets/images/Readme/InicioSesion.jpg" width="140" height="160"></td>
-        <td><img src="./assets/images/Readme/Registro.jpg" width="140"></td>
-        <td><img src="./assets/images/Readme/Categorias.jpg" width="140"></td>
-        <td><img src="./assets/images/Readme/Libro.jpg" width="140"></td>
-        <td><img src="./assets/images/Readme/Carrito.jpg" width="140"></td>
-        <td><img src="./assets/images/Readme/Ordenes.jpg" width="140"></td>
-        <td><img src="./assets/images/Readme/DetalleOrdenes.jpg" width="140"></td>
-        <td><img src="./assets/images/Readme/Perfil.jpg" width="140"></td>
+        <td><img src="./assets/images/Readme/InicioSesion.jpg" width="140" height="200"></td>
+        <td><img src="./assets/images/Readme/Registro.jpg" width="140" height="200"></td>
+        <td><img src="./assets/images/Readme/Categorias.jpg" width="140" height="200"></td>
+        <td><img src="./assets/images/Readme/Libro.jpg" width="140" height="200"></td>
+        <td><img src="./assets/images/Readme/Carrito.jpg" width="140" height="200"></td>
+        <td><img src="./assets/images/Readme/Ordenes.jpg" width="140" height="200"></td>
+        <td><img src="./assets/images/Readme/DetalleOrdenes.jpg" width="140" height="200"></td>
+        <td><img src="./assets/images/Readme/Perfil.jpg" width="140" height="200"></td>
   </tr>
 </table>
 
