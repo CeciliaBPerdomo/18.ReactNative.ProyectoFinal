@@ -23,11 +23,21 @@
 - `Ejecución`: npm start
 
 ## 📦 Instalaciones: 
-- npm install 
-    
-- `Expo Fonts & Iconos`: 
-    - npm install expo/vector-icons
-    - npm install expo-font
+<table>
+    <tr>
+        <td>npm install</td>
+    </tr>
+    <tr>
+        <td>Expo Fonts & Iconos</td>
+        <td>
+            <ul>
+                <li>npm install expo/vector-icons</li>
+                <li>npm install expo-font</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
 
 - `Navegación`: 
     - npm install @react-navigation/native
