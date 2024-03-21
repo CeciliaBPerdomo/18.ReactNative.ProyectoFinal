@@ -25,6 +25,7 @@
 ## 📦 Instalaciones: 
 <table>
     <tr>
+        <td>nstalación</td>
         <td>npm install</td>
     </tr>
     <tr>
@@ -36,34 +37,47 @@
             </ul>
         </td>
     </tr>
+    <tr>
+        <td>Navegación</td>
+        <td>
+            <ul>
+                <li>npm install @react-navigation/native</li>
+                <li>npm install react-native-screens </li>
+                <li>npm install react-native-safe-area-context</li>
+                <li>npm install @react-navigation/native-stack</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Redux</td>
+        <td>npm install @reduxjs/toolkit react-redux</td>
+    </tr>
+    <tr>
+        <td>YUP</td>
+        <td>npm install yup</td>
+    </tr>
+    <tr>
+        <td>Image Picker</td>
+        <td>npm install expo-image-picker</td>
+    </tr>
+    <tr>
+        <td>Expo Location</td>
+        <td>npm install expo-location</td>
+    </tr>
+    <tr>
+        <td>Dotenv (.env)</td>
+        <td>
+            <ul>
+                <li>npm install dotenv</li>
+                <li>npm install expo-constants</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>SQLite</td>
+        <td>npm install expo-sqlite</td>
+    </tr>
 </table>
-
-
-- `Navegación`: 
-    - npm install @react-navigation/native
-    - npm install react-native-screens 
-    - npm install react-native-safe-area-context
-    - npm install @react-navigation/native-stack
-
-- `Redux`: 
-    - npm install @reduxjs/toolkit react-redux
-
-- `Yup`:
-    - npm install yup
-
-- `Image Picker`: 
-    - npm install expo-image-picker
-
-- `Dotenv` (.env): 
-    - npm install dotenv
-    - npm install expo-constants
-
-- `Expo Location`:
-    - npm install expo-location
-
-- `SQLite`:
-    - npm install expo-sqlite
-
 
 ## 📃 Documentación útil
 <table>
