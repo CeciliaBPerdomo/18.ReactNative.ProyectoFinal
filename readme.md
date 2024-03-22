@@ -105,6 +105,16 @@
         <td>SQLite</td>
         <td>npm install expo-sqlite</td>
     </tr>
+    <tr>
+        <td>EAS-Cli</td>
+        <td>
+            <ul>
+                <li>npm install -g eas-cli</li>
+                <li>eas login</li>
+                <li>eas build -p android --profile preview</li>
+            <ul>
+        </td>
+    </tr>
 </table>
 
 ## 📃 Documentación útil
@@ -163,6 +173,15 @@
         <td>Markdown language</td>
         <td>https://www.markdownguide.org/basic-syntax/</td>
     </tr> 
+    <tr>
+        <td>EAS-CLI</td>
+        <td>
+            <ul>
+                <li>https://docs.expo.dev/build-reference/apk/</li>
+                <li>https://dev.to/chinmaymhatre/how-to-generate-apk-using-react-native-expo-kae</li>
+                <li>https://medium.com/@hrusikesh251.nalanda/how-to-generate-apk-using-react-native-expo-cli-43c4c2085636</li>
+            </ul>
+        </td>
 </table>
 
 ## 📱 Principios de optimización: 
@@ -170,8 +189,13 @@
 - `DRY`: Don't repeat yourself 
 - `YAGNI`: You aren't gonna need it
 
+
+## APK
+https://expo.dev/artifacts/eas/jB5r28ipNdnCopw1KFGzeD.apk
+
 ## ⭐ Programadora estrella
 Realizado por <a href="https://www.linkedin.com/in/cecilia-perdomo/">**Cecilia Perdomo**</a>, desde el 09 de Febrero 2024. 
+
 
 ##
 ![GitHub Org's stars](https://img.shields.io/github/stars/camilafernanda?style=social)
