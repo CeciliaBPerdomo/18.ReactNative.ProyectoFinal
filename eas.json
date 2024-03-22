@@ -3,17 +3,34 @@
       "preview": {
         "android": {
           "buildType": "apk"
+        },
+        "env": {
+          "FIREBASE_KEY": "$FIREBASE_KEY",
+          "MAP_API_KEY": "$MAP_API_KEY"
         }
       },
       "preview2": {
         "android": {
           "gradleCommand": ":app:assembleRelease"
+        },
+        "env": {
+          "FIREBASE_KEY": "$FIREBASE_KEY",
+          "MAP_API_KEY": "$MAP_API_KEY"
         }
       },
       "preview3": {
-        "developmentClient": true
+        "developmentClient": true,
+        "env": {
+          "FIREBASE_KEY": "$FIREBASE_KEY",
+          "MAP_API_KEY": "$MAP_API_KEY"
+        }
       },
-      "production": {}
+      "production": {
+        "env": {
+          "FIREBASE_KEY": "$FIREBASE_KEY",
+          "MAP_API_KEY": "$MAP_API_KEY"
+        }
+      }
     }
   }
   
